@@ -3,12 +3,25 @@
 @font-face{font-family: emoji; src: url(Twemoji.ttf)}
 
 pre {font: 20px emoji, arial}
+h1 {font: bold 50px emoji, calibri}
+h1 span { font-size:35px;display: inline-block; width: 40px; height: 50px; overflow: hidden; text-align:center; vertical-align: bottom; text-shadow: 0 0 2px #000; }
 pre.noemoji {font: 20px arial}
 .circle {width: 20px; height: 20px; display: inline-block; border-radius: 50% }
 .pink { background: pink }
 .gray { background: gray }
 </style>
 
+<h1>EM<span id=h11>O</span>JIPH<span>😱</span>BIA</h1>
+<script>
+emo = 0;
+setInterval(()=>{
+  h11.innerHTML = String.fromCodePoint(127744+emo);
+  emo+=(Math.random()*5|0)+1;
+  if(127744+emo == 129791){
+    emo = 0;
+  }
+},120);
+</script>
 <pre>
 <!--
 
@@ -16,29 +29,17 @@ pre.noemoji {font: 20px arial}
 ==========
 
 Level 1: Name my phobia! You see an emoji and need to find the right name among 3.
-
 Level 2: Scare me! You see a name and must pick the correct emoji among 3
-
 Level 3: Save me! You see a phobia name and must find its solution
-
 Level 4: Which phobia exists? You see 3 phobias emoji and find the real one
-
 Level 5: Which phobia doesn't exist? You see 3 phobias emoji and find the false one
-
 Level 6: Which phobia exists? You see 3 phobias names and find the real one
-
 Level 7: Which phobia doesn't exist? You see 3 phobias names and find the false one
-
 Level 8: name that phobia: rearrange syllabs
-
 Level 9: Who do I scare? see a phobia name and pick who is affected by it
-
 Level 10: Xenophobia: find the correct flag
-
 Level 11: name my phobia: rearrange letters
-
 Level 12: Scare me! You see a name and must pick the correct emoji in all the keyboard
-
 Level 13: name that phobia: type the phobia name
 
 
@@ -52,584 +53,205 @@ Chromophobia: fear of colors
 -->
 <h2>List of phobias</h2>
 🛁  Ablutophobia: fear of bathing
-  Acarophobia: fear of itching or of the insects that cause itching
-  Acephobia: fear of asexual people
 🍋  Acerophobia: fear of sourness
 🌃  Achluophobia: fear of darkness
-🔊📢  Acousticophobia: fear of noise
-🪜  Acrophobia: fear of heights
-  Aeroacrophobia: fear of open high places
-  Aeronausiphobia: fear of vomiting secondary to airsickness
-✈️🚁  Aerophobia: fear of aircraft or flying
-  Aerophobia: fear of drafts, air swallowing, or airborne noxious substances
-  Afrophobia: fear of Africans
-  Agateophobia: fear of insanity
+📢  Acousticophobia: fear of noise
+🧗🏻  Acrophobia: fear of heights
+✈️  Aerophobia, Aviophobia, Aviatophobia: fear of aircraft or flying
+🤪  Agateophobia: fear of insanity
 🤕  Agliophobia: fear of pain
-  Agoraphobia: fear of open places
-  Agraphobia: fear of sexual abuse
+🤬 Kakologophobia: fear of swear words
 🐻  Agrizoophobia: fear of wild animals
 🚸🚶🛣️  Agyrophobia: fear of crossing streets
 🔪  Aichmophobia: fear of sharp or pointed objects
-🐈  Ailurophobia: fear of cats
-  Albanophobia: fear of Albanians
-  Albuminurophobia: fear of kidney disease
 🐔  Alektorophobia: fear of chickens
+👽 alienophobia: fear of aliens
 🤕  Algophobia: fear of pain
-🧅🧄  Alliumphobia: fear of the strong-scented Allium genus: garlic, onions, chives, shallots
-  Allodoxaphobia: fear of opinions
-  Altophobia: fear of heights
-🧹  Amathophobia: fear of dust
+🧄  Alliumphobia: garlic, onions, shallots
+.･:･🧹  Amathophobia, Koniophobia: fear of dust
 🚗  Amaxophobia: fear of riding in a car
 🚶  Ambulophobia: fear of walking
-  Amnesiphobia: fear of amnesia
-  Amychophobia: fear of scratches or being scratched
-  Anablephobia: fear of looking up
+🙄  Anablephobia: fear of looking up
 🦆  Anatidaephobia: fear of ducks
-࿓༄  Ancraophobia: fear of wind or drafts
+࿓༄  Ancraophobia, Anemophobia: fear of wind or drafts
 👨  Androphobia: fear of adult men
-࿓༄  Anemophobia: fear of air drafts or wind
-  Anginophobia: fear of angina, choking, or narrowness
-  Anglophobia: fear of England or English culture
 😠  Angrophobia : fear of anger or of becoming angry
-  Ankylophobia: fear of immobility of a joint
 🌸🌷  Anthrophobia or Anthophobia: fear of flowers
 🧍  Anthropophobia: fear of human beings
 🌊  Antlophobia: fear of floods
 💔  Anuptaphobia: fear of staying single
 ♾️  Apeirophobia: fear of infinity
 👆  Aphenphosmphobia: fear of being touched
-🐝  Apiphobia: fear of bees
-  Aporophobia: fear of people without resources
-  Apotemnophobia: fear of amputees
 💧  Aquaphobia: fear of water
- ️ Arachibutyrophobia: fear of peanut butter sticking to the roof of the mouth
-🕷️  Arachnophobia: fear of spiders and other arachnids such as scorpions
 🔢  Arithmophobia: fear of numbers
 👨  Arrhenphobia: fear of men
 🔥  Arsonphobia: fear of fire
-  Asthenophobia: fear of fainting or weakness
 🌩️  Astraphobia: fear of thunder and lightning
-✨🌃🌌  Astrophobia: fear of stars or celestial space
-  Asymmetriphobia: fear of asymmetrical things
-  Ataxiophobia: fear of ataxia
-  Ataxophobia: fear of disorder or untidiness
-  Atelophobia: fear of imperfection
-  Atephobia: fear of ruin or ruins
-  Athazagoraphobia: fear of being forgotten
+✨  Astrophobia: fear of stars or celestial space
 💣💥  Atomosophobia: fear of atomic explosions
-  Atychiphobia: fear of failure
-  Autophobia: fear of isolation
 🪈  Aulophobia: fear of flutes
 🥇  Aurophobia: fear of gold
 🌌  Auroraphobia: fear of Northern lights
-  Autodysomophobia: fear of one that has a vile odor
-  Automatonophobia: fear of ventriloquist’s dummies, animatronic creatures, wax statues
-  Automysophobia: fear of being dirty
-  Aviophobia or Aviatophobia: fear of flying
 🦠  Bacillophobia: fear of microbes
 🦠  Bacteriophobia: fear of bacteria
-  Ballistophobia: fear of missiles or bullets
-  Barophobia: fear of gravity
-  Basophobia: fear of falling
-𓊍  Bathmophobia: fear of stairs or steep slopes
+𓊍  Bathmophobia, Climacophobia: fear of stairs
 🤿  Bathophobia: fear of depth
 🏢  Batophobia: fear of heights or being close to high buildings
-🐸  Batrachophobia: fear of frogs and other amphibians
 🪡  Belonephobia: fear of needles or pins
 📖  Bibliophobia: fear of books
-  Bibliophobia: fear or hatred of books
-  Biphobia: fear of bisexuality or bisexuals
-  Blennophobia: fear of slime
-  Bogyphobia: fear of bogeys or the bogeyman
-  Bolshephobia: fear of Bolsheviks
 🌱  Botanophobia: fear of plants
-  Bromidrosiphobia or Bromidrophobia: fear of body smells
 🌩️  Brontophobia: fear of thunder and lightning
-  Bufonophobia: fear of toads
-  Cacophobia: fear of ugliness
-  Cainophobia or Cainotophobia: fear of newness, novelty
 👩  Caligynephobia: fear of beautiful women
-  Carcinophobia: fear of cancer
 ❤️  Cardiophobia: fear of the heart
 🍖  Carnophobia: fear of meat
-  Catagelophobia: fear of being ridiculed
-  Catapedaphobia: fear of jumping from high and low places
 🪑  Cathisophobia: fear of sitting
 🪞  Catoptrophobia: fear of mirrors
 🤔💡  Cenophobia or Centophobia: fear of new things or ideas
-  Chaetophobia: fear of hair
-🥶  Cheimaphobia or Cheimatophobia: fear of cold
-  Chemophobia: fear of chemicals
-  Cherophobia: fear of gaiety
+💇🏻‍♀️  Chaetophobia: fear of hair
+🥶  Cheimaphobia, Cheimatophobia,  Frigophobia, Psychrophobia: fear of cold
 😊  Cherophobia: fear of happiness
 ❄️  Chionophobia: fear of snow
-  Chiraptophobia: fear of being touched
+👉🧍  Chiraptophobia: fear of being touched
 🤲  Chirophobia: fear of hands
-  Chiclephobia: fear of chewing gum
-🦇  Chiroptophobia: fear of bats
-  Cholerophobia: fear of anger or the fear of cholera
 💃🏻🕺🏽  Chorophobia: fear of dancing
-  Christianophobia: fear of Christians
 💸  Chrometophobia or Chrematophobia: fear of money
 🕓  Chronomentrophobia: fear of clocks
 ⌛  Chronophobia: fear of time and time moving forward
 🍝  Cibophobia: fear of food
 🛗  Claustrophobia: fear of having no escape and being closed in
-  Cleithrophobia or Cleisiophobia: fear of being locked in an enclosed place
-  Cleptophobia: fear of stealing
-𓊍  Climacophobia: fear of stairs
 🛌🏻  Clinophobia: fear of going to bed
-  Clithrophobia or Cleithrophobia: fear of being enclosed
-  Cnidophobia: fear of stings
-🪦  Coimetrophobia: fear of cemeteries
-  Coitophobia: fear of coitus
+🪦🪦🪦  Coimetrophobia: fear of cemeteries
 ☄️  Cometophobia: fear of comets
 🥢  Consecotaleophobia: fear of chopsticks
-  Contreltophobia: fear of sexual abuse
 💩❌  Coprastasophobia: fear of constipation
 💩  Coprophobia: fear of feces or defecation
-  Coronaphobia: fear of COVID-19
 🤡  Coulrophobia: fear of clowns
-  Counterphobia: The preference by a phobic for fearful situations
-  Cremnophobia: fear of precipices
-🥶🧊  Cryophobia: fear of extreme cold, ice, or frost
+🥶  Cryophobia: fear of extreme cold, ice, or frost
 🥂  Crystallophobia: fear of crystals or glass
 💻  Cyberphobia: fear of computers
 🚲  Cyclophobia: fear of bicycles
 🌊  Cymophobia or Kymophobia: fear of waves or wave-like motions
-🐶  Cynophobia: fear of dogs
-  Cypridophobia or Cypriphobia or Cyprianophobia or Cyprinophobia: fear of prostitutes or venereal disease
-  Decidophobia: fear of making decisions
-  Defecaloesiophobia: fear of painful bowel movements
-  Dementophobia: fear of insanity
 😈  Demonophobia or Daemonophobia: fear of demons
 🌳  Dendrophobia: fear of trees
-  Deipnophobia: fear of dining with others
 👩🏻‍⚕️🦷  Dentophobia: fear of dentists
 🩹  Dermatophobia: fear of skin lesions
-  Dermatosiophobia or Dermatophobia or Dermatopathophobia: fear of skin disease
 ➡️  Dextrophobia: fear of objects on the right side of the body
-  Diabetophobia: fear of diabetes
-  Diagraphephobia: fear of losing your computer data
 🎒🏫  Didaskaleinophobia: fear of going to school
 ⚖️  Dikephobia: fear of justice
 🌪️  Dinophobia: fear of dizziness or whirlpools
-  Diplophobia: fear of double vision
 🍻 Dipsophobia: fear of drinking
 👙❌  Dishabiliophobia: fear of undressing in front of someone
 🚮  Disposophobia: fear of throwing stuff out
 🏠  Domatophobia: fear of houses
-  Doraphobia: fear of fur or skins of animals
-  Doxophobia: fear of expressing opinions or of receiving praise
 🚸🚶🛣️  Dromophobia: fear of crossing streets
-  Dutchphobia: fear of the Dutch
-  Dysmorphophobia: fear of a real or imaginary body defect
-  Dystychiphobia: fear of accidents
+🚗💥🚗  Dystychiphobia: fear of accidents
 ⛪  Ecclesiophobia: fear of church
-  Ecophobia: fear of cataclysmic environmental change
-  Ecophobia: fear of home
-  Eicophobia: fear of home surroundings(Domatophobia, Oikophobia)
 🪞  Eisoptrophobia: fear of mirrors or seeing one’s reflection in a mirror
 🔌  Electrophobia: fear of electricity
-  Eleutherophobia: fear of freedom
-🐈  Elurophobia: fear of cats (Ailurophobia)
 🤮  Emetophobia: fear of vomiting
 📌  Enetophobia: fear of pins
-  Enochlophobia: fear of crowds
-  Enosiophobia or Enissophobia: fear of having committed an unpardonable sin or of criticism
-🕷️  Entomophobia: fear of insects
 🌅  Eosophobia: fear of dawn or daylight
-  Ephebiphobia: fear of youth
 🤧🩸  Epistaxiophobia: fear of nosebleeds
-  Epistemophobia: fear of knowledge
-🐎  Equinophobia: fear of horses
-  Eremophobia: fear of being oneself or of loneliness
+🎓📖  Epistemophobia, Gnosiophobia: fear of knowledge
 😳  Ereuthrophobia: fear of blushing
-  Ergophobia: fear of work
-  Erotophobia: fear of sexual love or sexual abuse
-  Euphobia: fear of hearing good news
-  Eurotophobia: aversion to female genitals
 🤒  Febriphobia or Fibriphobia or Fibriophobia: fear of fever
-🐈  Felinophobia: fear of cats
-  Francophobia: fear of France or French culture 
-  Frigophobia: fear of cold or cold things
-🐈  Galeophobia or Gatophobia: fear of cats
-  Gallophobia or Galiophobia: fear France or French culture 
 💍👰🏻🤵🏻  Gamophobia: fear of marriage
-  Gayphobia: fear of gay men (specifically)
-  Gelotophobia: fear of being laughed at
-  Geniophobia: fear of chins
-  Genophobia: fear of sexual intercourse
 🧎🏻  Genuphobia: fear of knees or the act of kneeling
 🌉  Gephyrophobia: fear of bridges
-  Gerascophobia: fear of growing old or aging
-  Germanophobia: fear of Germans
 👴  Gerontophobia: fear of growing old, or a hatred or fear of the elderly
-  Gerontophobia: fear of aging or the elderly
-  Geumaphobia or Geumophobia: fear of taste
 🎈  Globophobia: fear of balloons
-  Glossophobia: fear of speaking in public or of trying to speak
-  Gnosiophobia: fear of knowledge
 ✍  Graphophobia: fear of writing or handwriting
-  Gymnophobia: fear of nudity
-  Gynophobia: fear of adult women
-  Hadephobia: fear of hell
+😈🔥  Hadephobia: fear of hell
 😇♱  Hagiophobia: fear of saints or holy things
-  Halitophobia: fear of bad breath
-  Hamartophobia: fear of sinning
-  Haphephobia or Haptephobia: fear of being touched
-  Haphephobia: fear of being touched
-  Harpaxophobia: fear of being robbed
-  Hedonophobia: fear of obtaining pleasure
-  Heliophobia: fear of sunlight
-  Hellenologophobia: fear of Greek terms or complex scientific terminology
-🐛  Helminthophobia: fear of worms
 🩸  Hemophobia: fear of blood
-  Heresyphobia or Hereiophobia: fear of challenges to official doctrine or of radical deviation
 🐊  Herpetophobia: fear of reptiles or amphibians
-  Heterophobia: fear of heterosexuals
-  Hibernophobia: fear of Irish people
-  Hinduphobia: fear of Hindus
-🐎  Hippophobia: fear of horses
-  Hippopotomonsrosesquippedaliophobia: fear of long words
 👨🏻‍⚖️  Hierophobia: fear of priests or sacred things
-  Hispanophobia: fear of Hispanic people, Hispanic culture, and the Spanish language
-  Hobophobia: fear of bums or beggars
-  Hodophobia: fear of travel
-😶‍🌫️  Homichlophobia: fear of fog
-  Homilophobia: fear of sermons
-  Hominophobia: fear of men
-  Homophobia: fear of homosexuality, homosexuals, or gays 
+😶‍🌫️  Homichlophobia, Nebulaphobia: fear of fog
 🔫  Hoplophobia: fear of firearms
-  Hormephobia: fear of shock
-  Hungarophobia: fear of Hungarians
-  Hydrargyophobia: fear of mercurial medicines
 💦  Hydrophobia: fear of water
-  Hydrophobophobia: fear of rabies
 🥛  Hyelophobia or Hyalophobia: fear of glass
-  Hygrophobia: fear of liquids, dampness, or moisture
-  Hylephobia: fear of materialism or the fear of epilepsy
-  Hylophobia: fear of forests
-  Hypengyophobia or Hypegiaphobia: fear of responsibility
 😴  Hypnophobia: fear of sleep 
-  Hypochondria: fear of illness
-  Hypsiphobia: fear of height
-  Iatrophobia: fear of going to the doctor or of doctors
-  Ichthyophobia: fear of fish
 🤔💡  Ideophobia: fear of ideas
 😵‍💫  Illyngophobia: fear of vertigo or feeling dizzy when looking down
-  Indonesiaphobia: fear of Indonesia or Indonesian culture
-  Indophobia: fear of India or Indian culture
-🕷️  Insectophobia: fear of insects
-  Iophobia: fear of poison
-  Iranophobia: fear of Iran or Iranian culture
-  Islamophobia: fear of Muslims
-  Isolophobia: fear of solitude, being alone
-  Isopterophobia: fear of termites, insects that eat wood
-  Italophobia: fear of Italians
-  Ithyphallophobia: fear of seeing, thinking about, or having an erect penis
-  Japanophobia: fear of Japanese
-  Judeophobia: fear of Jews
-  Kainolophobia or Kainophobia: fear of anything new, novelty
-  Kakorrhaphiophobia: fear of failure or defeat
-  Katagelophobia: fear of ridicule
-  Kathisophobia: fear of sitting down
-🪳  Katsaridaphobia: fear of cockroaches
-  Kenophobia: fear of voids or empty spaces
-  Keraunophobia or Ceraunophobia: fear of thunder and lightning
-  Kinetophobia or Kinesophobia: fear of movement or motion
-  Kleptophobia: fear of stealing
-  Koinoniphobia: fear of rooms
-  Kolpophobia: fear of genitals, particularly female
-  Koniophobia: fear of dust
 🥱  Kopophobia: fear of fatigue
-  Koryophobia: fear of the Koreans
-  Kosmikophobia: fear of space or the cosmos
-  Koumpounophobia: fear of buttons on clothing
 🌊  Kymophobia: fear of waves 
-  Kynophobia: fear of rabies
-  Kyphophobia: fear of stooping
+🧟 Kinemortophobia: fear of zombies
 🥕🥦  Lachanophobia: fear of vegetables
 🗣️  Laliophobia or Lalophobia: fear of speaking
-  Latinophobia: fear of Latin people
-🦋  Lepidopterophobia: fear of butterflies and moths
-  Leprophobia or Lepraphobia: fear of leprosy
-  Lesbophobia: fear of lesbians
 ⬅️  Levophobia: fear of things to the left side of the body
 📢  Ligyrophobia: fear of loud noises
 🌪️  Lilapsophobia: fear of tornadoes or hurricanes
 🏞️  Limnophobia: fear of lakes
 🧵  Linonophobia: fear of string
-  Lipophobia: fear of fats in food
-  Liticaphobia: fear of lawsuits
-  Lockiophobia: fear of childbirth
 💻  Logizomechanophobia: fear of computers
-  Logophobia: fear of words
-  Luiphobia: fear of lues, syphilis
-  Lusophobia: fear of the Portuguese, Portuguese culture, and the Portuguese language
 🦦  Lutraphobia: fear of otters
-  Lygophobia: fear of darkness
-  Lyssophobia: fear of rabies or of becoming mad
-  Macrophobia: fear of long waits
 🍳  Mageiricophobia: fear of cooking
-  Maieusiophobia: fear of childbirth
-  Malaxophobia: fear of love play 
-  Maniaphobia: fear of insanity
 🎭  Masklophobia: fear of people in masks, costumes, and mascots
-  Mastigophobia: fear of punishment
-  Mechanophobia: fear of machines
-  Medomalacuphobia: fear of losing an erection
-  Medorthophobia: fear of an erect penis
-  Megalophobia: fear of large objects
-🐝  Melissophobia: fear of bees
 ♫  Melophobia: fear of music
-  Meningitophobia: fear of brain disease
-  Menophobia: fear of menstruation
-  Merinthophobia: fear of being bound or tied up
-  Metallophobia: fear of metal
-  Metathesiophobia: fear of changes
 ☄️  Meteorophobia: fear of meteors
 🍻  Methyphobia: fear of alcohol
-  Metrophobia: fear or hatred of poetry
-  Microbiophobia: fear of microbes
-  Microphobia: fear of small things
-  Misophobia or Mysophobia: fear of being contaminated with dirt or germs
-  Mnemophobia: fear of memories
-  Molysmophobia or Molysomophobia: fear of dirt or contamination
-  Monopathophobia: fear of definite disease
-  Monophobia: fear of being alone or isolated or of one’s self
-🚗  Motorphobia: fear of automobiles
-  Motorphobia: fear of automobiles
-  Mottephobia: fear of moths
-🐁  Musophobia: fear of mice or rats
 🍄  Mycophobia: fear of mushrooms
-  Mycrophobia: fear of small things
-  Myctophobia: fear of darkness
 🐜  Myrmecophobia: fear of ants
-  Mysophobia: fear of germs, contamination, or dirt
-  Mythophobia: fear of myths or stories or false statements
-  Myxophobia: fear of slime 
-  Nebulaphobia: fear of fog 
 💀  Necrophobia: fear of death or the dead
-  Negrophobia: fear of black people
-  Nelophobia: fear of glass
-  Neopharmaphobia: fear of new drugs
-  Neophobia: fear of anything new
-  Neophobia: fear of newness, novelty, change, or progress
-  Nephophobia: fear of clouds
-  Nipponophobia: fear of the Japanese
-  Noctiphobia: fear of the night
-  Nomatophobia: fear of names
-  Nomophobia: fear of being out of mobile phone 
+🥛  Nelophobia: fear of glass
+☁️  Nephophobia: fear of clouds
+📱❌  Nomophobia: fear of being out of mobile phone 
 🏥  Nosocomephobia: fear of hospitals
-  Nosophobia: fear of contracting a disease
-  Nostophobia: fear of returning home
-  Novercaphobia: fear of your stepmother
-  Nucleomituphobia: fear of nuclear weapons
-  Nudophobia: fear of nudity
-  Nyctohylophobia: fear of dark wooded areas or of forests at night
-  Nyctophobia: fear of darkness
-  Obesophobia: fear of gaining weight
-  Ochlophobia: fear of crowds or mobs
-  Ochophobia: fear of vehicles
-  Octophobia : fear of the figure 8
 👩🏻‍⚕️🦷  Odontophobia: fear of dentists
-  Odynophobia or Odynephobia: fear of pain 
 🍷  Oenophobia: fear of wines
-  Oikophobia: fear of home surroundings and household appliances
-  Olfactophobia: fear of smells
-  Ombrophobia: fear of rain or of being rained on
-  Omphalophobia: fear of belly buttons
-  Oneirogmophobia: fear of wet dreams
+🌧️  Ombrophobia: fear of rain or of being rained on
 👁️  Ommetaphobia: fear of eyes
-  Oneirophobia: fear of dreams
-  Onomatophobia: fear of hearing a certain word or names
-🐍  Ophidiophobia: fear of snakes
-  Ophthalmophobia: fear of being stared at
-  Opiophobia: fear medical doctors experience of prescribing needed pain medications for patients
-  Optophobia: fear of opening one’s eyes
-  Optophobia: fear of opening one’s eyes
-🐦  Ornithophobia: fear of birds
-  Orthophobia: fear of property
-  Osmophobia: fear of odors
-🐚  Ostraconophobia: fear of shellfish
-  Ouranophobia or Uranophobia: fear of heaven
-  Pagophobia: fear of ice or frost
-  Panphobia: fear of everything or the constant fear of an unknown cause
-  Papaphobia: fear of the Pope
 📜  Papyrophobia: fear of paper
-  Paralipophobia: fear of neglecting duty or responsibility
-  Paraphobia: fear of sexual perversion
-  Parasitophobia: fear of parasites
-  Paraskavedekatriaphobia: fear of Friday the 13th
-  Parthenophobia: fear of virgins or young girls
-  Parturiphobia: fear of childbirth
-  Pathophobia: fear of disease
-  Patroiophobia: fear of heredity
-  Peccatophobia: fear of sinning or imaginary crimes
-  Pediculophobia: fear of lice
-  Pediophobia: fear of dolls
 👶🏻  Pedophobia: fear of babies or children
 👨🏻‍🦲  Peladophobia: fear of bald people
-  Pellagrophobia: fear of pellagra
-  Peniaphobia: fear of poverty
-  Pentheraphobia: fear of mother-in-law 
-  Phagophobia: fear of swallowing
-  Phalacrophobia: fear of becoming bald
-  Phallophobia: fear of erections
-  Pharmacophobia: fear of drugs
 💊  Pharmacophobia: fear of medications
 👻  Phasmophobia: fear of ghosts
-  Phasmophobia: fear of ghosts or phantoms
 🔆  Phengophobia: fear of daylight or sunshine
 💋  Philemaphobia or Philematophobia: fear of kissing
 ❤️  Philophobia: fear of love
-  Philosophobia: fear of philosophy
-  Phobophobia: fear of fear itself or of having a phobia
-  Phonophobia: fear of loud sounds or voices
-  Photophobia: fear of light
-  Phronemophobia: fear of thinking
-  Phthiriophobia: fear of lice
-  Phthisiophobia: fear of tuberculosis
 🍃  Phyllophobia: fear of leaves
 🪦  Placophobia: fear of tombstones
 💰  Plutophobia: fear of wealth
 🌧️  Pluviophobia: fear of rain or of being rained on
-  Pneumatiphobia: fear of spirits
-  Pnigophobia or Pnigerophobia: fear of choking or being smothered
-  Pocrescophobia: fear of gaining weight 
 💵  Plutophobia: fear of money
 🧔🏻‍♀️  Pogonophobia: fear of beards
-  Poinephobia: fear of punishment
-  Poliosophobia: fear of contracting poliomyelitis
-  Politicophobia: fear or abnormal dislike of politicians
-  Polonophobia: fear of the Polish
-  Polyphobia: fear of many things
-  Ponophobia: fear of overworking or of pain
 🎥🔞  Pornophobia: fear of pornography
-
-  Potamophobia: fear of rivers or running water
 🍻  Potophobia: fear of alcohol
-  Proctophobia: fear of rectums
-  Prosophobia: fear of progress
-  Psellismophobia: fear of stuttering
-  Psychophobia: fear of mental illness or the mentally ill
-  Psychrophobia: fear of cold
-  Pteromerhanophobia: fear of flying
 👣🪶  Pteronophobia: fear of being tickled by feathers
 🎎  Pupaphobia: fear of puppets
 🤒  Pyrexiophobia: fear of fever
 🔥  Pyrophobia: fear of fire
-  Quadriplegiphobia: fear of people with quadriplegia or fear of becoming a quadriplegic
 🩻☢️  Radiophobia: fear of radioactivity or X-rays
-🐸  Ranidaphobia: fear of frogs
-  Rectophobia: fear of rectum or rectal diseases
-  Rhabdophobia: fear of being severely punished or beaten by a rod
 💩  Rhypophobia: fear of defecation
-  Rhytiphobia: fear of getting wrinkles
-  Rupophobia: fear of dirt
-  Russophobia: fear of Russians
+🤖  Robophobia: fear of robots
+🧛‍♀️ Sanguivoriphobia: fear of vampires
 🎃  Samhainophobia: fear of Halloween
-  Sarmassophobia: fear of love play 
-  Satanophobia: fear of Satan
-  Scabiophobia: fear of scabies
 💩  Scatophobia: fear of fecal matter
-  Scelerophibia: fear of bad men, burglars
-  Sciophobia: fear of shadows
-🐛  Scoleciphobia: fear of worms
 🏫  Scolionophobia: fear of school
-  Scopophobia: fear of being looked at or stared at
 👨‍🦯  Scotomaphobia: fear of blindness in the visual field
-  Scotophobia: fear of darkness
-  Scriptophobia: fear of writing in public
 🦈  Selachophobia: fear of sharks
 ⊹📸  Selaphobia: fear of light flashes
 🌙  Selenophobia: fear of the moon
-  Seplophobia: fear of decaying matter
-  Sesquipedalophobia: fear of long words
-  Sexophobia: fear of sexual organs or sexual activities
-  Shiaphobia: fear of Shiites
-  Siderodromophobia: fear of trains or railroads
 ⭐  Siderophobia: fear of stars
 ⬅️  Sinistrophobia: fear of things to the left or left-handed
-  Sinophobia: fear of Chinese people
-  Sitophobia or Sitiophobia: fear of food or eating
-🐍  Snakephobia: fear of snakes
-  Soceraphobia: fear of parents-in-law
-  Sociophobia: fear of society or people in general
 😴  Somniphobia: fear of sleep
-  Sophophobia: fear of learning
-  Soteriophobia: fear of dependence on others
-  Spacephobia: fear of outer space
 🪞  Spectrophobia: fear of mirrors
 👻  Spectrophobia: fear of specters or ghosts
-  Spermatophobia or Spermophobia: fear of germs
-  Spheksophobia: fear of wasps
-  Stasiphobia: fear of standing or walking
 ✟  Staurophobia: fear of crosses or the crucifix
-  Stenophobia: fear of narrow things or places
 😈🔥  Stygiophobia or Stigiophobia: fear of hell
-  Submechanophobia: fear of partially or fully submerged man-made objects
-  Sunniphobia: fear of Sunnis
-🐁  Suriphobia: fear of mice
-  Symbolophobia: fear of symbolism
-  Symmetrophobia: fear of symmetry
-  Syngenesophobia: fear of relatives
-  Syphilophobia: fear of syphilis
-  Tachophobia: fear of speed
-🪱  Taeniophobia or Teniophobia: fear of tapeworms
-  Taphephobia Taphophobia: fear of being buried alive or of cemeteries
-  Taphophobia: fear of graves or fear of being placed in a grave while still alive
-  Tapinophobia: fear of being contagious
 🐂  Taurophobia: fear of bulls
-  Technophobia: fear of advanced technology
 ☎️  Telephobia: fear or reluctance of making or taking telephone calls
-  Teratophobia: fear of giving birth to a monster
-  Testophobia: fear of taking tests
-  Tetanophobia: fear of lockjaw, tetanus
-  Textophobia: fear of certain fabrics
-  Thaasophobia: fear of sitting
-  Thalassophobia: fear of the sea or fear of being in the ocean
 ☠️  Thanatophobia: fear of dying
 🎬  Theatrophobia: fear of theaters
-  Thermophobia: fear of intolerance to high temperatures
 🤰🏻  Tokophobia: fear of childbirth or pregnancy
-  Tomophobia: fear of invasive medical procedure
 🌩️  Tonitrophobia: fear of thunder
-  Topophobia: fear of certain places or situations, such as stage fright
-  Toxiphobia: fear of being poisoned
-  Transphobia: fear of transgender people
 🤕  Traumatophobia: fear of having an injury
-  Tremophobia: fear of trembling
-  Trichinophobia: fear of trichinosis
-  Trichophobia: fear of hair loss
-  Tropophobia: fear of moving or making changes
 💉  Trypanophobia: fear of needles or injections
-  Trypophobia: fear of holes or textures with a pattern of holes
-  Tuberculophobia: fear of tuberculosis
-  Turcophobia: fear of Turks
-  Tyrannophobia: fear of tyrants
-  Uranophobia or Ouranophobia: fear of Heaven
-  Urophobia: fear of urine or urinating
-  Vaccinophobia: fear of vaccination
-  Vehophobia: fear of driving
 👩  Venustraphobia: fear of beautiful women
-  Verbophobia: fear of words
-  Verminophobia: fear of germs
 👕👖  Vestiphobia: fear of clothing
-  Virginitiphobia: fear of rape
-  Vitricophobia: fear of stepfather
 🎢  Veloxrotaphobia  fear of roller coasters
-  Wiccaphobia: fear of witches and witchcraft
-  Xenoglossophobia: fear of foreign languages
-  Xenophobia: fear of foreigners
-  Xerophobia: fear of dryness
 🪵  Xylophobia: fear of wooden objects or forests
 🪒  Xyrophobia: fear of razors
-  Zelophobia: fear of jealousy
-  Zemmiphobia: fear of the great mole rat
-  Zeusophobia: fear of God or gods
-  Zoophobia: fear of animals
 
 
 <h2>Chromophobia: fear of colors</h2>
@@ -645,6 +267,30 @@ Chromophobia: fear of colors
 🟢 Prasinophobia  fear of the color green
 <div class="circle pink"></div>Rhodophobia  fear of the color pink
 
+<h2>Zoophobia</h2>
+🐈  Ailurophobia, Galeophobia or Gatophobia: fear of cats
+🕷️  Arachnophobia: fear of spiders and other arachnids such as scorpions
+🐸  Batrachophobia, Ranidaphobia: fear of frogs
+🦇  Chiroptophobia: fear of bats
+🐶  Cynophobia: fear of dogs
+🕷️  Insectophobia, Entomophobia: fear of insects
+🐎  Equinophobia, Hippophobia: fear of horses
+🐟 Ichthyophobia	fear of fish
+🪳  Katsaridaphobia: fear of cockroaches
+🦋  Lepidopterophobia: fear of butterflies and moths
+🐝  Melissophobia, Apiphobia: fear of bees
+🐌  Molluscophobia	fear of snails and slugs
+🐁  Suriphobia, Musophobia: fear of mice or rats
+🐍  Ophidiophobia: fear of snakes
+🐦  Ornithophobia: fear of birds
+🐚  Ostraconophobia: fear of shellfish
+🐘 Pachydermophobia	fear of elephants
+🦎 Scoliodentosaurophobia	fear of lizards, geckos
+🐛  Scoleciphobia, Helminthophobia: fear of worms
+🪱  Taeniophobia, Teniophobia: fear of tapeworms
+🐻 The Fear of Bears – Arkoudaphobia
+🪰 The Fear of Flies –Pteronarcophobia
+🐺 The Fear of Wolves –   Lupophobia
 
 </pre>
 <pre class=noemoji>
@@ -685,72 +331,29 @@ Triantadyophobia (fear of 32)
 Triantatriaphobia (fear of 33)
 Triantatesseraphobia (fear of 34)
 Triantapentaphobia (fear of 35)
-Triantahexaphobia (fear of 36)
-Triakontenneaphobia (fear of 39)
-Tessarakontadyophobia (fear of 42)
-Tessarakontaheptaphobia (fear of 47)
-Pentekontoctophobia (fear of 58)
-Hexekontadyophobia (fear of 62)
 Hexekontenneaphobia (fear of 69)
-Hebdomekontahenophobia (fear of 71)
-Ogdokontaheptaphobia (fear of 87)
 Enenekontenneaphobia (fear of 99)
 Hekatophobia (fear of 100)
-Hekatohendecaphobia (fear of 111)
-Hekatenenekontahenophobia (fear of 191)
-Diakosioihekkaidekaphobia (fear of 216)
-Diakosioipentekontaphobia (fear of 250)
-Triakosioitriakontatriophobia (fear of 333)
-Tetrakosioeikosiphobia (fear of 420)
-Pentakosioipentekontahenophobia (fear of 551)
-Hexakosioihekkaidekaphobia (fear of 616)
 Hexakosioihexekontahexaphobia (fear of 666)
-Heftakosioitessarakontaheptaphobia (fear of 747)
-Enniakosioihendecaphobia (fear of 911)
-Enniakosioenenekontenneaphobia (fear of 999)
-Quattuormiliasescentoruphobia·(fear of 4600)
-Tessarakontadyochilahexekontenneaphobia (fear of 42069) 
-Nongentiseptuagintatrestrillionsescentiquinquagintanovemmiliacentumtredecimdeciesoctingentivigintiquattuormiliatrecentiphobia(fear of 973,659,113,824,315)
-Compustitusnumerophobia (fear of composite numbers)
-Meganumerophobia (fear of large numbers)
-Imparnumerophobia (fear of odd numbers)
-Omalonumerophobia (fear of even numbers)
-Piphobia (fear of pi)
-Phiphobia (fear of the golden ratio)
-Primonumerophobia (fear of prime numbers)
-Paranumerophobia (fear of irrational numbers)
-Neganumerophobia (fear of negative numbers)
-Decadisophobia (fear of decimals)
 </pre>
 
 <pre>
 <h2>Xenophobia: fear of foreigners:</h2>
-Afrophobia  fear/dislike of Africans
 🇦🇱 Albanophobia  fear/dislike of Albanians
 🇬🇧 Anglophobia  fear/dislike of England or English culture
-Catalanophobia  fear/dislike of Catalans, Catalonia, Catalan culture and the Catalan language
-Christianophobia  fear/dislike of Christians
 🇩🇪 Germanophobia  fear/dislike of Germans
-Hinduphobia  fear/dislike of Hindus
 🇮🇪 Hibernophobia  fear/dislike of Irish people
 🇪🇸 Hispanophobia  fear/dislike of Hispanic people, Hispanic culture and the Spanish language
 🇭🇺 Hungarophobia  fear/dislike of Hungarians
 🇮🇳 Indophobia  fear/dislike of India or Indian culture
 🇮🇩 Indonesiaphobia  fear/dislike of Indonesia or Indonesian culture
 🇮🇷 Iranophobia  fear/dislike of Iran or Iranian culture
-Islamophobia  fear/dislike of Muslims
 🇮🇹 Italophobia  fear/dislike of Italians
-Judeophobia  fear/dislike of Jews
 🇵🇹 Lusophobia  fear/dislike of the Portuguese, Portuguese culture and the Portuguese language
 🇯🇵 Nipponophobia  fear/dislike of the Japanese
 🇰🇷 Koryophobia  fear/dislike of the Koreans
-Latinophobia  fear/dislike of Latin people
-Negrophobia  fear/dislike of black people
 🇵🇱 Polonophobia  fear/dislike of the Polish
 🇷🇺 Russophobia  fear/dislike of Russians
-Kurdophobia  fear/dislike of Kurdish people
-Shiaphobia  fear/dislike of Shiites
 🇨🇳 Sinophobia  fear/dislike of Chinese people
-Sunniphobia  fear/dislike of Sunnis
 🇹🇷 Turcophobia  fear/dislike of Turks
 🇺🇦 Ukrainophobia  fear/dislike of Ukrainians
