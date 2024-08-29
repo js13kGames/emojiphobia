@@ -1,359 +1,71 @@
-﻿<style>
-/* The font "f" uses the Emoji fonts Noto Color emoji and Twemoji (for Windows) */
+﻿<!doctype html>
+<title>EMOJIPHOBIA</title>
+<link rel=icon href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>😱</text></svg>">
+<head>
+<style>
 @font-face{font-family: emoji; src: url(Twemoji.ttf)}
-
-pre {font: 20px emoji, arial}
-h1 {font: bold 50px emoji, calibri}
-h1 span { font-size:35px;display: inline-block; width: 40px; height: 50px; overflow: hidden; text-align:center; vertical-align: bottom; text-shadow: 0 0 2px #000; }
-pre.noemoji {font: 20px arial}
+@keyframes wobble { 0%, 100% { transform: rotate(-5deg) } 50% { transform: rotate(5deg) } }
+body { margin: 0; overflow: hidden; cursor: pointer }
+#b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri; overflow: hidden; }
+.state0 h1 {animation: wobble 2s infinite; font: bold 15vmin emoji, calibri; text-align: center; width: 95vmin; position: absolute; top: 30vmin; letter-spacing: -.5vmin; }
+.state0 h2 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 60vmin; }
+.state0 h1 span { font-size: 10vmin;display: inline-block; width: 12.5vmin; height: 14.5vmin; overflow: hidden; text-align:center; vertical-align: bottom; text-shadow: 0 0 2px #000; }
 .circle {width: 20px; height: 20px; display: inline-block; border-radius: 50% }
 .pink { background: pink }
 .gray { background: gray }
+.bigemoji { font-size: 30vmin; }
+button { background: #fff; border: 1px solid #888; border-radius: 5px; margin: .5vmin; padding: 1vmin 2vmin; }
 </style>
-
+</head>
+<body>
+<div id=b class="state0">
 <h1>EM<span id=h11>O</span>JIPH<span>😱</span>BIA</h1>
+<h2>start</h2>
+</div>
+</body>
 <script>
-emo = 0;
+
+// State:
+// 0: title
+// 1: level 1
+// ...
+// 13: level 13
+state = 0;
+
+// Globals
+titleemoji = 0;
+
+// Game loop
 setInterval(()=>{
-  h11.innerHTML = String.fromCodePoint(127744+emo);
-  emo+=(Math.random()*5|0)+1;
-  if(127744+emo == 129791){
-    emo = 0;
+
+  // Title
+  if(state == 0){
+    h11.innerHTML = String.fromCodePoint(127744+titleemoji);
+    titleemoji+=(Math.random()*3|0)+1;
+    if(titleemoji > 1024){
+      titleemoji = 0;
+    }
   }
+
+  // Quiz
 },120);
+
+// Click handler 
+onclick = (e) => {
+  console.log(e.target);
+  if(state == 0){
+    state = 1;
+    render();
+  }
+}
+
+// Render
+render = () => {
+  b.className = "state" + state;
+  // Title: ok
+  // Question 1:
+  if(state == 1){
+    b.innerHTML = "<h2>Question 1 / 13:<br>Name my phobia</h2><div class=bigemoji id=e>😱</div><br><button id=b1>Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaa</button><br><button id=b2>B</button><br><button id=b3>C</button>";
+  }
+}
 </script>
-<pre>
-<!--
-
-13 PHOBIAS
-==========
-
-Level 1: Name my phobia! You see an emoji and need to find the right name among 3.
-Level 2: Scare me! You see a name and must pick the correct emoji among 3
-Level 3: Save me! You see a phobia name and must find its solution
-Level 4: Which phobia exists? You see 3 phobias emoji and find the real one
-Level 5: Which phobia doesn't exist? You see 3 phobias emoji and find the false one
-Level 6: Which phobia exists? You see 3 phobias names and find the real one
-Level 7: Which phobia doesn't exist? You see 3 phobias names and find the false one
-Level 8: name that phobia: rearrange syllabs
-Level 9: Who do I scare? see a phobia name and pick who is affected by it
-Level 10: Xenophobia: find the correct flag
-Level 11: name my phobia: rearrange letters
-Level 12: Scare me! You see a name and must pick the correct emoji in all the keyboard
-Level 13: name that phobia: type the phobia name
-
-
-Alterntives:
-
-Associate 3 phobias with the right name (3 vs 3)
-find the phobia accociated to the right name (2 wrong / 1 correct)
-Numerophobia: fear of numbers
-Chromophobia: fear of colors
-
--->
-<h2>List of phobias</h2>
-🛁  Ablutophobia: fear of bathing
-🍋  Acerophobia: fear of sourness
-🌃  Achluophobia: fear of darkness
-📢  Acousticophobia: fear of noise
-🧗🏻  Acrophobia: fear of heights
-✈️  Aerophobia, Aviophobia, Aviatophobia: fear of aircraft or flying
-🤪  Agateophobia: fear of insanity
-🤕  Agliophobia: fear of pain
-🤬 Kakologophobia: fear of swear words
-🐻  Agrizoophobia: fear of wild animals
-🚸🚶🛣️  Agyrophobia: fear of crossing streets
-🔪  Aichmophobia: fear of sharp or pointed objects
-🐔  Alektorophobia: fear of chickens
-👽 alienophobia: fear of aliens
-🤕  Algophobia: fear of pain
-🧄  Alliumphobia: garlic, onions, shallots
-.･:･🧹  Amathophobia, Koniophobia: fear of dust
-🚗  Amaxophobia: fear of riding in a car
-🚶  Ambulophobia: fear of walking
-🙄  Anablephobia: fear of looking up
-🦆  Anatidaephobia: fear of ducks
-࿓༄  Ancraophobia, Anemophobia: fear of wind or drafts
-👨  Androphobia: fear of adult men
-😠  Angrophobia : fear of anger or of becoming angry
-🌸🌷  Anthrophobia or Anthophobia: fear of flowers
-🧍  Anthropophobia: fear of human beings
-🌊  Antlophobia: fear of floods
-💔  Anuptaphobia: fear of staying single
-♾️  Apeirophobia: fear of infinity
-👆  Aphenphosmphobia: fear of being touched
-💧  Aquaphobia: fear of water
-🔢  Arithmophobia: fear of numbers
-👨  Arrhenphobia: fear of men
-🔥  Arsonphobia: fear of fire
-🌩️  Astraphobia: fear of thunder and lightning
-✨  Astrophobia: fear of stars or celestial space
-💣💥  Atomosophobia: fear of atomic explosions
-🪈  Aulophobia: fear of flutes
-🥇  Aurophobia: fear of gold
-🌌  Auroraphobia: fear of Northern lights
-🦠  Bacillophobia: fear of microbes
-🦠  Bacteriophobia: fear of bacteria
-𓊍  Bathmophobia, Climacophobia: fear of stairs
-🤿  Bathophobia: fear of depth
-🏢  Batophobia: fear of heights or being close to high buildings
-🪡  Belonephobia: fear of needles or pins
-📖  Bibliophobia: fear of books
-🌱  Botanophobia: fear of plants
-🌩️  Brontophobia: fear of thunder and lightning
-👩  Caligynephobia: fear of beautiful women
-❤️  Cardiophobia: fear of the heart
-🍖  Carnophobia: fear of meat
-🪑  Cathisophobia: fear of sitting
-🪞  Catoptrophobia: fear of mirrors
-🤔💡  Cenophobia or Centophobia: fear of new things or ideas
-💇🏻‍♀️  Chaetophobia: fear of hair
-🥶  Cheimaphobia, Cheimatophobia,  Frigophobia, Psychrophobia: fear of cold
-😊  Cherophobia: fear of happiness
-❄️  Chionophobia: fear of snow
-👉🧍  Chiraptophobia: fear of being touched
-🤲  Chirophobia: fear of hands
-💃🏻🕺🏽  Chorophobia: fear of dancing
-💸  Chrometophobia or Chrematophobia: fear of money
-🕓  Chronomentrophobia: fear of clocks
-⌛  Chronophobia: fear of time and time moving forward
-🍝  Cibophobia: fear of food
-🛗  Claustrophobia: fear of having no escape and being closed in
-🛌🏻  Clinophobia: fear of going to bed
-🪦🪦🪦  Coimetrophobia: fear of cemeteries
-☄️  Cometophobia: fear of comets
-🥢  Consecotaleophobia: fear of chopsticks
-💩❌  Coprastasophobia: fear of constipation
-💩  Coprophobia: fear of feces or defecation
-🤡  Coulrophobia: fear of clowns
-🥶  Cryophobia: fear of extreme cold, ice, or frost
-🥂  Crystallophobia: fear of crystals or glass
-💻  Cyberphobia: fear of computers
-🚲  Cyclophobia: fear of bicycles
-🌊  Cymophobia or Kymophobia: fear of waves or wave-like motions
-😈  Demonophobia or Daemonophobia: fear of demons
-🌳  Dendrophobia: fear of trees
-👩🏻‍⚕️🦷  Dentophobia: fear of dentists
-🩹  Dermatophobia: fear of skin lesions
-➡️  Dextrophobia: fear of objects on the right side of the body
-🎒🏫  Didaskaleinophobia: fear of going to school
-⚖️  Dikephobia: fear of justice
-🌪️  Dinophobia: fear of dizziness or whirlpools
-🍻 Dipsophobia: fear of drinking
-👙❌  Dishabiliophobia: fear of undressing in front of someone
-🚮  Disposophobia: fear of throwing stuff out
-🏠  Domatophobia: fear of houses
-🚸🚶🛣️  Dromophobia: fear of crossing streets
-🚗💥🚗  Dystychiphobia: fear of accidents
-⛪  Ecclesiophobia: fear of church
-🪞  Eisoptrophobia: fear of mirrors or seeing one’s reflection in a mirror
-🔌  Electrophobia: fear of electricity
-🤮  Emetophobia: fear of vomiting
-📌  Enetophobia: fear of pins
-🌅  Eosophobia: fear of dawn or daylight
-🤧🩸  Epistaxiophobia: fear of nosebleeds
-🎓📖  Epistemophobia, Gnosiophobia: fear of knowledge
-😳  Ereuthrophobia: fear of blushing
-🤒  Febriphobia or Fibriphobia or Fibriophobia: fear of fever
-💍👰🏻🤵🏻  Gamophobia: fear of marriage
-🧎🏻  Genuphobia: fear of knees or the act of kneeling
-🌉  Gephyrophobia: fear of bridges
-👴  Gerontophobia: fear of growing old, or a hatred or fear of the elderly
-🎈  Globophobia: fear of balloons
-✍  Graphophobia: fear of writing or handwriting
-😈🔥  Hadephobia: fear of hell
-😇♱  Hagiophobia: fear of saints or holy things
-🩸  Hemophobia: fear of blood
-🐊  Herpetophobia: fear of reptiles or amphibians
-👨🏻‍⚖️  Hierophobia: fear of priests or sacred things
-😶‍🌫️  Homichlophobia, Nebulaphobia: fear of fog
-🔫  Hoplophobia: fear of firearms
-💦  Hydrophobia: fear of water
-🥛  Hyelophobia or Hyalophobia: fear of glass
-😴  Hypnophobia: fear of sleep 
-🤔💡  Ideophobia: fear of ideas
-😵‍💫  Illyngophobia: fear of vertigo or feeling dizzy when looking down
-🥱  Kopophobia: fear of fatigue
-🌊  Kymophobia: fear of waves 
-🧟 Kinemortophobia: fear of zombies
-🥕🥦  Lachanophobia: fear of vegetables
-🗣️  Laliophobia or Lalophobia: fear of speaking
-⬅️  Levophobia: fear of things to the left side of the body
-📢  Ligyrophobia: fear of loud noises
-🌪️  Lilapsophobia: fear of tornadoes or hurricanes
-🏞️  Limnophobia: fear of lakes
-🧵  Linonophobia: fear of string
-💻  Logizomechanophobia: fear of computers
-🦦  Lutraphobia: fear of otters
-🍳  Mageiricophobia: fear of cooking
-🎭  Masklophobia: fear of people in masks, costumes, and mascots
-♫  Melophobia: fear of music
-☄️  Meteorophobia: fear of meteors
-🍻  Methyphobia: fear of alcohol
-🍄  Mycophobia: fear of mushrooms
-🐜  Myrmecophobia: fear of ants
-💀  Necrophobia: fear of death or the dead
-🥛  Nelophobia: fear of glass
-☁️  Nephophobia: fear of clouds
-📱❌  Nomophobia: fear of being out of mobile phone 
-🏥  Nosocomephobia: fear of hospitals
-👩🏻‍⚕️🦷  Odontophobia: fear of dentists
-🍷  Oenophobia: fear of wines
-🌧️  Ombrophobia: fear of rain or of being rained on
-👁️  Ommetaphobia: fear of eyes
-📜  Papyrophobia: fear of paper
-👶🏻  Pedophobia: fear of babies or children
-👨🏻‍🦲  Peladophobia: fear of bald people
-💊  Pharmacophobia: fear of medications
-👻  Phasmophobia: fear of ghosts
-🔆  Phengophobia: fear of daylight or sunshine
-💋  Philemaphobia or Philematophobia: fear of kissing
-❤️  Philophobia: fear of love
-🍃  Phyllophobia: fear of leaves
-🪦  Placophobia: fear of tombstones
-💰  Plutophobia: fear of wealth
-🌧️  Pluviophobia: fear of rain or of being rained on
-💵  Plutophobia: fear of money
-🧔🏻‍♀️  Pogonophobia: fear of beards
-🎥🔞  Pornophobia: fear of pornography
-🍻  Potophobia: fear of alcohol
-👣🪶  Pteronophobia: fear of being tickled by feathers
-🎎  Pupaphobia: fear of puppets
-🤒  Pyrexiophobia: fear of fever
-🔥  Pyrophobia: fear of fire
-🩻☢️  Radiophobia: fear of radioactivity or X-rays
-💩  Rhypophobia: fear of defecation
-🤖  Robophobia: fear of robots
-🧛‍♀️ Sanguivoriphobia: fear of vampires
-🎃  Samhainophobia: fear of Halloween
-💩  Scatophobia: fear of fecal matter
-🏫  Scolionophobia: fear of school
-👨‍🦯  Scotomaphobia: fear of blindness in the visual field
-🦈  Selachophobia: fear of sharks
-⊹📸  Selaphobia: fear of light flashes
-🌙  Selenophobia: fear of the moon
-⭐  Siderophobia: fear of stars
-⬅️  Sinistrophobia: fear of things to the left or left-handed
-😴  Somniphobia: fear of sleep
-🪞  Spectrophobia: fear of mirrors
-👻  Spectrophobia: fear of specters or ghosts
-✟  Staurophobia: fear of crosses or the crucifix
-😈🔥  Stygiophobia or Stigiophobia: fear of hell
-🐂  Taurophobia: fear of bulls
-☎️  Telephobia: fear or reluctance of making or taking telephone calls
-☠️  Thanatophobia: fear of dying
-🎬  Theatrophobia: fear of theaters
-🤰🏻  Tokophobia: fear of childbirth or pregnancy
-🌩️  Tonitrophobia: fear of thunder
-🤕  Traumatophobia: fear of having an injury
-💉  Trypanophobia: fear of needles or injections
-👩  Venustraphobia: fear of beautiful women
-👕👖  Vestiphobia: fear of clothing
-🎢  Veloxrotaphobia  fear of roller coasters
-🪵  Xylophobia: fear of wooden objects or forests
-🪒  Xyrophobia: fear of razors
-
-
-<h2>Chromophobia: fear of colors</h2>
-🔴  Erythrophobia: fear of the color red or fear of blushing
-⚪  Leukophobia: fear of the color white
-⚫  Melanophobia: fear of the color black
-🟣  Porphyrophobia: fear of the color purple
-🟡  Xanthophobia: fear of the color yellow
-🟠  Chrysophobia  fear of the color orange
-🔵  Cyanophobia  fear of the color blue
-<div class="circle gray"></div>Glaucophobia  fear of the color gray
-🟤 Kastanophobia  fear of the color brown
-🟢 Prasinophobia  fear of the color green
-<div class="circle pink"></div>Rhodophobia  fear of the color pink
-
-<h2>Zoophobia</h2>
-🐈  Ailurophobia, Galeophobia or Gatophobia: fear of cats
-🕷️  Arachnophobia: fear of spiders and other arachnids such as scorpions
-🐸  Batrachophobia, Ranidaphobia: fear of frogs
-🦇  Chiroptophobia: fear of bats
-🐶  Cynophobia: fear of dogs
-🕷️  Insectophobia, Entomophobia: fear of insects
-🐎  Equinophobia, Hippophobia: fear of horses
-🐟 Ichthyophobia	fear of fish
-🪳  Katsaridaphobia: fear of cockroaches
-🦋  Lepidopterophobia: fear of butterflies and moths
-🐝  Melissophobia, Apiphobia: fear of bees
-🐌  Molluscophobia	fear of snails and slugs
-🐁  Suriphobia, Musophobia: fear of mice or rats
-🐍  Ophidiophobia: fear of snakes
-🐦  Ornithophobia: fear of birds
-🐚  Ostraconophobia: fear of shellfish
-🐘 Pachydermophobia	fear of elephants
-🦎 Scoliodentosaurophobia	fear of lizards, geckos
-🐛  Scoleciphobia, Helminthophobia: fear of worms
-🪱  Taeniophobia, Teniophobia: fear of tapeworms
-🐻 The Fear of Bears – Arkoudaphobia
-🪰 The Fear of Flies –Pteronarcophobia
-🐺 The Fear of Wolves –   Lupophobia
-
-</pre>
-<pre class=noemoji>
-<h2>Numerophobia: fear of numbers</h2>
-Oudenophobia (fear of 0)
-Henophobia (fear of 1)
-Dyophobia (fear of 2)
-Triskaphobia (fear of 3)
-Tetraphobia (fear of 4)
-Pentaphobia (fear of 5)
-Hexaphobia (fear of 6)
-Heptaphobia (fear of 7)
-Octophobia (fear of 8)
-Enneaphobia (fear of 9)
-Decaphobia (fear of 10)
-Hendecaphobia (fear of 11)
-Dodecaphobia (fear of 12)
-Triskaidekaphobia (fear of 13)
-Tetradecaphobia (fear of 14)
-Dekapentophobia (fear of 15)
-Hexadecaphobia (fear of 16)
-Heptadecaphobia (fear of 17)
-Octodecaphobia (fear of 18)
-Enneadecaphobia (fear of 19)
-Eikosiphobia (fear of 20)
-Eikosihenaphobia (fear of 21)
-Eikosidyophobia (fear of 22)
-Eikositriophobia (fear of 23)
-Eikositetraphobia (fear of 24)
-Eikosipentaphobia (fear of 25)
-Eikosihexaphobia (fear of 26)
-Eikosiheptaphobia (fear of 27)
-Eikosioctaphobia (fear of 28)
-Eikosienneaphobia (fear of 29)
-Trigintiphobia (fear of 30)
-Triacontahenphobia (fear of 31)
-Triantadyophobia (fear of 32)
-Triantatriaphobia (fear of 33)
-Triantatesseraphobia (fear of 34)
-Triantapentaphobia (fear of 35)
-Hexekontenneaphobia (fear of 69)
-Enenekontenneaphobia (fear of 99)
-Hekatophobia (fear of 100)
-Hexakosioihexekontahexaphobia (fear of 666)
-</pre>
-
-<pre>
-<h2>Xenophobia: fear of foreigners:</h2>
-🇦🇱 Albanophobia  fear/dislike of Albanians
-🇬🇧 Anglophobia  fear/dislike of England or English culture
-🇩🇪 Germanophobia  fear/dislike of Germans
-🇮🇪 Hibernophobia  fear/dislike of Irish people
-🇪🇸 Hispanophobia  fear/dislike of Hispanic people, Hispanic culture and the Spanish language
-🇭🇺 Hungarophobia  fear/dislike of Hungarians
-🇮🇳 Indophobia  fear/dislike of India or Indian culture
-🇮🇩 Indonesiaphobia  fear/dislike of Indonesia or Indonesian culture
-🇮🇷 Iranophobia  fear/dislike of Iran or Iranian culture
-🇮🇹 Italophobia  fear/dislike of Italians
-🇵🇹 Lusophobia  fear/dislike of the Portuguese, Portuguese culture and the Portuguese language
-🇯🇵 Nipponophobia  fear/dislike of the Japanese
-🇰🇷 Koryophobia  fear/dislike of the Koreans
-🇵🇱 Polonophobia  fear/dislike of the Polish
-🇷🇺 Russophobia  fear/dislike of Russians
-🇨🇳 Sinophobia  fear/dislike of Chinese people
-🇹🇷 Turcophobia  fear/dislike of Turks
-🇺🇦 Ukrainophobia  fear/dislike of Ukrainians
