@@ -5,35 +5,335 @@
 <style>
 @font-face{font-family: emoji; src: url(Twemoji.ttf)}
 @keyframes wobble { 0%, 100% { transform: rotate(-5deg) } 50% { transform: rotate(5deg) } }
-body { margin: 0; overflow: hidden; cursor: pointer }
-#b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri; overflow: hidden; }
+body { margin: 0; overflow: hidden; }
+* { cursor: pointer }
+#b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri; overflow: hidden; box-shadow: 0 0 50vmin #ccc inset, 0 0 50vmin #888}
 .state0 h1 {animation: wobble 2s infinite; font: bold 15vmin emoji, calibri; text-align: center; width: 95vmin; position: absolute; top: 30vmin; letter-spacing: -.5vmin; }
-.state0 h2 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 60vmin; }
-.state0 h1 span { font-size: 10vmin;display: inline-block; width: 12.5vmin; height: 14.5vmin; overflow: hidden; text-align:center; vertical-align: bottom; text-shadow: 0 0 2px #000; }
-.circle {width: 20px; height: 20px; display: inline-block; border-radius: 50% }
+.state0 h2#h201 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 62vmin; }
+.state0 h2#h202 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 70vmin; }
+.state0 h1 span { font-size: 10vmin;display: inline-block; width: 12.5vmin; height: 14.5vmin; overflow: visible; text-align:center; vertical-align: bottom; text-shadow: 0 0 1vmin #000; }
+.state99 h2 { position: absolute; top: 80vmin; font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; }
+h2 { font: bold 5vmin/4.5vmin calibri; }
+.circle {width: 3vmin; height: 3vmin; display: inline-block; border-radius: 50% }
 .pink { background: pink }
 .gray { background: gray }
-.bigemoji { font-size: 30vmin; }
-button { background: #fff; border: 1px solid #888; border-radius: 5px; margin: .5vmin; padding: 1vmin 2vmin; }
+.bigemoji { font-size: 30vmin; text-shadow: 0 0 1vmin #000;}
+.bigtext { font-size: 10vmin; line-height: 55vmin; }
+button { background: #fff; font: 4vmin calibri; border: 1px solid #888; border-bottom-width: 2px; 
+border-right-width: 2px; border-radius: 1vmin; margin: .5vmin; padding: 1vmin 2vmin; }
+.state2 button { font: 10vmin emoji, calibri; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
+br { font-size: 1px }
+#encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 20vmin 2vmin; width: 92vmin; font-family: calibri; }
+#encyclo span { font-size: 4vmin; text-shadow: 0 0 .2vmin #000; font-family: emoji, calibri; padding: 0 0 0 2vmin}
+.green { background: #5F5 }
+.red { background: #F55 }
 </style>
 </head>
 <body>
 <div id=b class="state0">
-<h1>EM<span id=h11>O</span>JIPH<span>😱</span>BIA</h1>
-<h2>start</h2>
+<h1>EM<span id=h11>😱</span>JIPH<span>😱</span>BIA</h1>
+<h2 id=h201>PLAY</h2>
+<h2 id=h202>ENCYCLOPHOBIA</h2>
 </div>
 </body>
 <script>
+
+// Data
+// categories: Easy / medium / hard / colors / animals / numbers / countries
+// for each phobia => emoji / name / description 
+data = {
+  easy: [
+    ["📢", "Acousticophobia", "fear of noise"],
+    ["🧗🏻", "Acrophobia", "fear of heights"],
+    ["✈️", "Aerophobia,Aviophobia,Aviatophobia", "fear of aircraft"],
+    ["👽", "Alienophobia", "fear of aliens"],
+    ["🚶", "Ambulophobia", "fear of walking"],
+    ["😠", "Angrophobia ", "fear of anger"],
+    ["🧍", "Anthropophobia", "fear of human beings"],
+    ["💧", "Aquaphobia", "fear of water"],
+    ["🔢", "Arithmophobia", "fear of numbers"],
+    ["✨", "Astrophobia,Siderophobia", "fear of stars"],
+    ["🥇", "Aurophobia", "fear of gold"],
+    ["🌌", "Auroraphobia", "fear of Northern lights"],
+    ["🦠", "Bacteriophobia", "fear of bacteria"],
+    ["🤿", "Bathophobia", "fear of depth"],
+    ["📖", "Bibliophobia", "fear of books"],
+    ["🌱", "Botanophobia", "fear of plants"],
+    ["❤️", "Cardiophobia", "fear of the heart"],
+    ["🍖", "Carnophobia", "fear of meat"],
+    ["⌛", "Chronophobia", "fear of time and time moving forward"],
+    ["🛗", "Claustrophobia", "fear of having no escape and being closed in"],
+    ["🥶", "Cryophobia", "fear of extreme cold, ice, or frost"],
+    ["💻", "Cyberphobia,Logizomechanophobia", "fear of computers"],
+    ["😈", "Demonophobia,Daemonophobia", "fear of demons"],
+    ["👩🏻‍⚕️🦷", "Dentophobia,Odontophobia", "fear of dentists"],
+    ["🚮", "Disposophobia", "fear of throwing stuff out"],
+    ["⛪", "Ecclesiophobia", "fear of church"],
+    ["🔌", "Electrophobia", "fear of electricity"],
+    ["🧎🏻", "Genuphobia", "fear of kneeling"],
+    ["👴", "Gerontophobia", "fear of growing old"],
+    ["✍", "Graphophobia", "fear of handwriting"],
+    ["🩸", "Hemophobia", "fear of blood"],
+    ["💦", "Hydrophobia", "fear of water"],
+    ["😴", "Somniphobia,Hypnophobia", "fear of sleep"],
+    ["🤔💡", "Ideophobia", "fear of ideas"],
+    ["☄️", "Meteorophobia", "fear of meteors"],
+    ["🍄", "Mycophobia", "fear of mushrooms"],
+    ["💀", "Necrophobia", "fear of death or the dead"],
+    ["🍷", "Oenophobia", "fear of wines"],
+    ["👶🏻", "Pedophobia", "fear of babies or children"],
+    ["👨🏻‍🦲", "Peladophobia", "fear of bald people"],
+    ["💊", "Pharmacophobia", "fear of medications"],
+    ["😱️", "Phobophobia", "fear of phobias"],
+    ["🌧️", "Pluviophobia,Ombrophobia", "fear of rain or of being rained on"],
+    ["🎥🔞", "Pornophobia", "fear of pornography"],
+    ["🩻☢️", "Radiophobia", "fear of radioactivity or X-rays"],
+    ["🤖", "Robophobia", "fear of robots"],
+    ["🎬", "Theatrophobia", "fear of theaters"],
+    ["🥶", "Frigophobia,Cheimaphobia,Psychrophobia", "fear of cold"],
+    ["☄️", "Cometophobia", "fear of comets"],
+  ],
+
+  medium: [
+    ["🛁", "Ablutophobia", "fear of bathing"],
+    ["🍋", "Acerophobia", "fear of sourness"],
+    ["🐻", "Agrizoophobia", "fear of wild animals"],
+    ["👨", "Androphobia,Arrhenphobia", "fear of adult men"],
+    ["🔥", "Arsonphobia", "fear of fire"],
+    ["☢️💣", "Atomosophobia", "fear of atomic explosions"],
+    ["🌩️", "Astraphobia,Brontophobia", "fear of thunder and lightning"],
+    ["👩", "Venustraphobia,Caligynephobia", "fear of beautiful women"],
+    ["👉🧍", "Chiraptophobia", "fear of being touched"],
+    ["🕓", "Chronomentrophobia", "fear of clocks"],
+    ["🚲", "Cyclophobia", "fear of bicycles"],
+    ["🩹", "Dermatophobia", "fear of skin lesions"],
+    ["👙❌", "Dishabiliophobia", "fear of undressing in front of someone"],
+    ["🏠", "Domatophobia", "fear of houses"],
+    ["🤮", "Emetophobia", "fear of vomiting"],
+    ["😳", "Ereuthrophobia", "fear of blushing"],
+    ["🎈", "Globophobia", "fear of balloons"],
+    ["😇♱", "Hagiophobia,Staurophobia", "fear of saints, crosses or holy things"],
+    ["🐊", "Herpetophobia", "fear of reptiles or amphibians"],
+    ["😶‍🌫️", "Nebulaphobia,Homichlophobia", "fear of fog"],
+    ["🧟", "Kinemortophobia", "fear of zombies"],
+    ["⬅️", "Sinistrophobia,Levophobia", "fear of things to the left"],
+    ["🦦", "Lutraphobia", "fear of otters"],
+    ["🎭", "Masklophobia", "fear of people in masks, costumes, and mascots"],
+    ["♫", "Melophobia", "fear of music"],
+    ["🥛", "Crystallophobia,Nelophobia,Hyalophobia", "fear of glass"],
+    ["📴", "Nomophobia", "fear of being out of mobile phone"],
+    ["🏥", "Nosocomephobia", "fear of hospitals"],
+    ["🍻", "Methyphobia,Potophobia", "fear of alcohol"],
+    ["📜", "Papyrophobia", "fear of paper"],
+    ["👻", "Phasmophobia,Spectrophobia", "fear of ghosts"],
+    ["❤️", "Philophobia", "fear of love"],
+    ["💰", "Plutophobia,Chrometophobia,Chrematophobia", "fear of wealth, money"],
+    ["🎎", "Pupaphobia", "fear of puppets"],
+    ["💩", "Scatophobia,Rhypophobia", "fear of fecal matter"],
+    ["🧛‍♀️", "Sanguivoriphobia", "fear of vampires"],
+    ["🔥", "Pyrophobia", "fear of fire"],
+    ["🌙", "Selenophobia", "fear of the moon"],
+    ["🐂", "Taurophobia", "fear of bulls"],
+    ["☎️", "Telephobia", "fear of making or taking telephone calls"],
+    ["☠️", "Thanatophobia", "fear of dying"],
+    ["🌩️", "Tonitrophobia", "fear of thunder"],
+    ["🤕", "Traumatophobia", "fear of having an injury"],
+    ["👕👖", "Vestiphobia", "fear of clothing"],
+    ["🪵", "Xylophobia", "fear of wooden objects or forests"],
+  ],
+
+  hard: [
+    ["🌃", "Achluophobia", "fear of darkness"],
+    ["🤪", "Agateophobia", "fear of insanity"],
+    ["🤕", "Agliophobia,Algophobia", "fear of pain"],
+    ["🤬", "Kakologophobia", "fear of swear words"],
+    ["🚸", "Agyrophobia,Dromophobia", "fear of crossing streets"],
+    ["🔪", "Aichmophobia", "fear of sharp objects"],
+    ["🐔", "Alektorophobia", "fear of chickens"],
+    ["🧄", "Alliumphobia", "fear of garlic, onions, shallots"],
+    [".･:･🧹", "Amathophobia,Koniophobia", "fear of dust"],
+    ["🚗", "Amaxophobia", "fear of riding in a car"],
+    ["🙄", "Anablephobia", "fear of looking up"],
+    ["࿓༄", "Ancraophobia,Anemophobia", "fear of wind or drafts"],
+    ["🌷", "Anthrophobia,Anthophobia", "fear of flowers"],
+    ["🌊", "Antlophobia", "fear of floods"],
+    ["💔", "Anuptaphobia", "fear of staying single"],
+    ["👆", "Aphenphosmphobia", "fear of being touched"],
+    ["🪈", "Aulophobia", "fear of flutes"],
+    ["𓊍", "Bathmophobia,Climacophobia", "fear of stairs"],
+    ["🏢", "Batophobia", "fear of heights or high buildings"],
+    ["🪡", "Belonephobia", "fear of needles or pins"],
+    ["🪑", "Cathisophobia", "fear of sitting"],
+    ["🪞", "Catoptrophobia,Eisoptrophobia", "fear of mirrors"],
+    ["🤔💡", "Cenophobia,Centophobia", "fear of new ideas"],
+    ["💇🏻‍♀️", "Chaetophobia", "fear of hair"],
+    ["😊", "Cherophobia", "fear of happiness"],
+    ["❄️", "Chionophobia", "fear of snow"],
+    ["🤲", "Chirophobia", "fear of hands"],
+    ["💃🏻🕺🏽", "Chorophobia", "fear of dancing"],
+    ["🍝", "Cibophobia", "fear of food"],
+    ["🛌🏻", "Clinophobia", "fear of going to bed"],
+    ["🪦", "Coimetrophobia", "fear of cemeteries"],
+    ["🥢", "Consecotaleophobia", "fear of chopsticks"],
+    ["💩❌", "Coprastasophobia", "fear of constipation"],
+    ["💩", "Coprophobia", "fear of feces or defecation"],
+    ["🤡", "Coulrophobia", "fear of clowns"],
+    ["🌊", "Cymophobia,Kymophobia", "fear of waves"],
+    ["🌳", "Dendrophobia", "fear of trees"],
+    ["➡️", "Dextrophobia", "fear of objects on the right"],
+    ["⚖️", "Dikephobia", "fear of justice"],
+    ["🌪️", "Dinophobia", "fear of whirlpools"],
+    ["🍻", "Dipsophobia", "fear of drinking"],
+    ["🚗💥🚗", "Dystychiphobia", "fear of accidents"],
+    ["📌", "Enetophobia", "fear of pins"],
+    ["🌅", "Eosophobia", "fear of dawn or daylight"],
+    ["🤧🩸", "Epistaxiophobia", "fear of nosebleeds"],
+    ["🎓📖", "Epistemophobia,Gnosiophobia", "fear of knowledge"],
+    ["🤒", "Febriphobia,Fibriphobia,Pyrexiophobia", "fear of fever"],
+    ["👰🏻🤵🏻", "Gamophobia", "fear of marriage"],
+    ["🌉", "Gephyrophobia", "fear of bridges"],
+    ["😈🔥", "Hadephobia", "fear of hell"],
+    ["👨🏻‍⚖️", "Hierophobia", "fear of priests or sacred things"],
+    ["🔫", "Hoplophobia", "fear of firearms"],
+    ["😵‍💫", "Illyngophobia", "fear of vertigo or feeling dizzy looking down"],
+    ["🥱", "Kopophobia", "fear of fatigue"],
+    ["🥕🥦", "Lachanophobia", "fear of vegetables"],
+    ["🗣️", "Laliophobia,Lalophobia", "fear of speaking"],
+    ["📢", "Ligyrophobia", "fear of loud noises"],
+    ["🌪️", "Lilapsophobia", "fear of tornadoes or hurricanes"],
+    ["🏞️", "Limnophobia", "fear of lakes"],
+    ["🧵", "Linonophobia", "fear of string"],
+    ["🍳", "Mageiricophobia", "fear of cooking"],
+    ["🐜", "Myrmecophobia", "fear of ants"],
+    ["☁️", "Nephophobia", "fear of clouds"],
+    ["👁️", "Ommetaphobia", "fear of eyes"],
+    ["🔆", "Phengophobia", "fear of daylight or sunshine"],
+    ["💋", "Philemaphobia,Philematophobia", "fear of kissing"],
+    ["🍃", "Phyllophobia", "fear of leaves"],
+    ["🪦", "Placophobia", "fear of tombstones"],
+    ["🧔🏻‍♀️", "Pogonophobia", "fear of beards"],
+    ["👣🪶", "Pteronophobia", "fear of being tickled by feathers"],
+    ["🎃", "Samhainophobia", "fear of Halloween"],
+    ["🏫", "Scolionophobia,Didaskaleinophobia", "fear of school"],
+    ["👨‍🦯", "Scotomaphobia", "fear of blindness"],
+    ["🦈", "Selachophobia", "fear of sharks"],
+    ["📸", "Selaphobia", "fear of light flashes"],
+    ["😈🔥", "Stygiophobia,Stigiophobia", "fear of hell"],
+    ["🤰🏻", "Tokophobia", "fear of childbirth or pregnancy"],
+    ["💉", "Trypanophobia", "fear of needles or injections"],
+    ["🎢", "Veloxrotaphobia", "fear of roller coasters"],
+    ["🪒", "Xyrophobia", "fear of razors"],
+  ],
+
+  color: [
+  
+    ["🔴", "Erythrophobia","fear of the color red"],
+    ["⚪", "Leukophobia","fear of the color white"],
+    ["⚫", "Melanophobia","fear of the color black"],
+    ["🟣", "Porphyrophobia","fear of the color purple"],
+    ["🟡", "Xanthophobia","fear of the color yellow"],
+    ["🟠", "Chrysophobia","fear of the color orange"],
+    ["🔵", "Cyanophobia", "fear of the color blue"],
+    ["<div class='circle gray'></div>","Glaucophobia","fear of the color gray"],
+    ["🟤", "Kastanophobia","fear of the color brown"],
+    ["🟢", "Prasinophobia","fear of the color green"],
+    ["<div class='circle pink'></div>","Rhodophobia", "fear of the color pink"],
+
+  ],
+
+  animal: [
+    ["🐈", "Gatophobian,Ailurophobia,Galeophobia","fear of cats"],
+    ["🕷️", "Arachnophobia","fear of spiders"],
+    ["🐸", "Batrachophobia,Ranidaphobia","fear of frogs"],
+    ["🦇", "Chiroptophobia","fear of bats"],
+    ["🐶", "Cynophobia","fear of dogs"],
+    ["🕷️", "Insectophobia,Entomophobia","fear of insects"],
+    ["🐎", "Equinophobia,Hippophobia","fear of horses"],
+    ["🐟", "Ichthyophobia","fear of fish"],
+    ["🪳", "Katsaridaphobia","fear of cockroaches"],
+    ["🦋", "Lepidopterophobia","fear of butterflies and moths"],
+    ["🐝", "Apiphobia,Melissophobia", "fear of bees"],
+    ["🐌", "Molluscophobia","fear of snails and slugs"],
+    ["🐁", "Suriphobia,Musophobia","fear of mice or rats"],
+    ["🐍", "Ophidiophobia","fear of snakes"],
+    ["🐦", "Ornithophobia","fear of birds"],
+    ["🐚", "Ostraconophobia","fear of shellfish"],
+    ["🐘", "Pachydermophobia","	fear of elephants"],
+    ["🦎", "Scoliodentosaurophobia	","fear of lizards, geckos"],
+    ["🐛", "Scoleciphobia,Helminthophobia","fear of worms"],
+    ["🪱", "Taeniophobia,Teniophobia","fear of tapeworms"],
+    ["🐻", "Arkoudaphobia","fear of bears"],
+    ["🪰", "Pteronarcophobia","fear of flies"],
+    ["🐺", "Lupophobia","fear of wolves"],
+    ["🦆", "Anatidaephobia","fear of ducks"],
+  ],
+
+  number: [
+    ["0️⃣", "Oudenophobia", "fear of 0"],
+    ["1️⃣", "Henophobia", "fear of 1"],
+    ["2️⃣", "Dyophobia", "fear of 2"],
+    ["3️⃣", "Triskaphobia", "fear of 3"],
+    ["4️⃣", "Tetraphobia", "fear of 4"],
+    ["5️⃣", "Pentaphobia", "fear of 5"],
+    ["6️⃣", "Hexaphobia", "fear of 6"],
+    ["7️⃣", "Heptaphobia", "fear of 7"],
+    ["8️⃣", "Octophobia", "fear of 8"],
+    ["9️⃣", "Enneaphobia", "fear of 9"],
+    ["1️⃣0️⃣", "Decaphobia", "fear of 10"],
+    ["1️⃣1️⃣", "Hendecaphobia", "fear of 11"],
+    ["1️⃣2️⃣", "Dodecaphobia", "fear of 12"],
+    ["1️⃣3️⃣", "Triskaidekaphobia", "fear of 13"],
+    ["1️⃣4️⃣", "Tetradecaphobia", "fear of 14"],
+    ["1️⃣5️⃣", "Dekapentophobia", "fear of 15"],
+    ["1️⃣6️⃣", "Hexadecaphobia", "fear of 16"],
+    ["1️⃣7️⃣", "Heptadecaphobia", "fear of 17"],
+    ["1️⃣8️⃣", "Octodecaphobia", "fear of 18"],
+    ["1️⃣9️⃣", "Enneadecaphobia", "fear of 19"],
+    ["2️⃣0️⃣", "Eikosiphobia", "fear of 20"],
+    ["3️⃣0️⃣", "Trigintiphobia", "fear of 30"],
+    ["6️⃣9️⃣", "Hexekontenneaphobia", "fear of 69"],
+    ["9️⃣9️⃣", "Enenekontenneaphobia", "fear of 99"],
+    ["1️⃣0️⃣0️⃣", "Hekatophobia", "fear of 100"],
+    ["6️⃣6️⃣6️⃣", "Hexakosioihexekontahexaphobia", "fear of 666"],
+    ["♾️", "Apeirophobia", "fear of infinity"],
+  ],
+
+  country: [
+    ["🇦🇱", "Albanophobia", "fear of Albanians"],
+    ["🇬🇧", "Anglophobia", "fear of England"],
+    ["🇩🇪", "Germanophobia", "fear of Germans"],
+    ["🇮🇪", "Hibernophobia", "fear of Irish people"],
+    ["🇪🇸", "Hispanophobia", "fear of Hispanic"],
+    ["🇭🇺", "Hungarophobia", "fear of Hungarians"],
+    ["🇮🇳", "Indophobia", "fear of India"],
+    ["🇮🇩", "Indonesiaphobia", "fear of Indonesia"],
+    ["🇮🇷", "Iranophobia", "fear of Iran"],
+    ["🇮🇹", "Italophobia", "fear of Italians"],
+    ["🇵🇹", "Lusophobia", "fear of the Portuguese"],
+    ["🇯🇵", "Nipponophobia", "fear of the Japanese"],
+    ["🇰🇷", "Koryophobia", "fear of the Koreans"],
+    ["🇵🇱", "Polonophobia", "fear of the Polish"],
+    ["🇷🇺", "Russophobia", "fear of Russians"],
+    ["🇨🇳", "Sinophobia", "fear of Chinese people"],
+    ["🇹🇷", "Turcophobia", "fear of Turks"],
+    ["🇺🇦", "Ukrainophobia", "fear of Ukrainians"],
+  ],
+
+};
 
 // State:
 // 0: title
 // 1: level 1
 // ...
 // 13: level 13
+// 99: encyclophobia
 state = 0;
 
 // Globals
 titleemoji = 0;
+answered = 0;
+points = 0;
+answer = 0;
 
 // Game loop
 setInterval(()=>{
@@ -50,22 +350,216 @@ setInterval(()=>{
   // Quiz
 },120);
 
+
 // Click handler 
 onclick = (e) => {
-  console.log(e.target);
+  //console.log(e.target);
+  
+  // Title
   if(state == 0){
-    state = 1;
-    render();
+    if(e.target.id == "h201"){
+      state = 1;
+      render();
+    }
+    if(e.target.id == "h202"){
+      state = 99;
+      render();
+    }
+  }
+  
+  // Level 1
+  else if(state == 1 && answered != 1 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 1;
+    setTimeout(()=>{
+      state = 2;
+      render();
+    },1000);
+  }
+  
+  // Level 2
+  else if(state == 2 && answered != 2 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 2;
+    setTimeout(()=>{
+      state = 3;
+      render();
+    },1000);
+  }
+  
+  // Level 3
+  else if(state == 3 && answered != 3 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 3;
+    setTimeout(()=>{
+      state = 4;
+      render();
+    },1000);
+  }
+  
+  // Encyclo
+  else if(state == 99){
+    if(e.target.id == "h299"){
+      location = location;
+    }
   }
 }
 
 // Render
 render = () => {
+  var questions;
+  var question, question2, question3;
+  var questionindex;
+  var emoji, names, emojis, name;
+  var i, j, k;
+  var phobias;
+  var html;
+  
+  b.innerHTML = "";
+  
   b.className = "state" + state;
+  
   // Title: ok
+  
   // Question 1:
   if(state == 1){
-    b.innerHTML = "<h2>Question 1 / 13:<br>Name my phobia</h2><div class=bigemoji id=e>😱</div><br><button id=b1>Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaa</button><br><button id=b2>B</button><br><button id=b3>C</button>";
+    b.innerHTML = "<h2>Question 1 / 13:<br>Name that phobia (easy)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.easy;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    emoji = question[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = emoji;
+
+    names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+  }
+  
+  
+  // Question 2:
+  else if(state == 2){
+    b.innerHTML = "<h2>Question 2 / 13:<br>Find what scares me (easy)</h2><div class=bigtext id=e>.</div><br><button id=b1>.</button><button id=b2>.</button><button id=b3>.</button>";
+    questions = data.easy;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    name = question[1].split(",")[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = name;
+
+    emojis = [question[0], question2[0], question3[0]]
+    //console.log(emojis);
+    answer = emojis[0];
+    emojis.sort((a,b)=>0.5 - Math.random());
+    //console.log(emojis);
+    //console.log(answer);
+    
+    b1.innerHTML = emojis[0];
+    b2.innerHTML = emojis[1];
+    b3.innerHTML = emojis[2];
+  }
+  
+  
+  // Question 3:
+  else if(state == 3){
+    b.innerHTML = "<h2>Question 3 / 13:<br>What zoophobiac am I?</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.animal;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    emoji = question[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = emoji;
+
+    names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+  }
+  
+  
+  
+  // Encyclo
+  else if(state == 99){
+    phobias = [];
+    for(i in data){
+      for(j in data[i]){
+        phobias.push(data[i][j]);
+      }
+    }
+    //console.log(phobias);
+    phobias.sort((a,b)=>a[1].localeCompare(b[1]));
+    html = "";
+    for(i in phobias){
+      html += "<span>"+phobias[i][0]+"</span> - "+phobias[i][1].replaceAll(",",", ") + " - " + phobias[i][2]+ "<br>";
+    }
+    b.innerHTML += "<div id=encyclo>"+html+"</div><h2 id=h299>MAIN MENU</h2>";
   }
 }
 </script>
