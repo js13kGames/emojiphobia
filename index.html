@@ -21,7 +21,7 @@ h2 { font: bold 5vmin/4.5vmin calibri; }
 .bigtext { font-size: 10vmin; line-height: 55vmin; }
 button { background: #fff; font: 4vmin calibri; border: 1px solid #888; border-bottom-width: 2px; 
 border-right-width: 2px; border-radius: 1vmin; margin: .5vmin; padding: 1vmin 2vmin; }
-.state2 button,.state6 button { font: 10vmin emoji, calibri; line-height: 12vmin; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
+.state2 button,.state6 button, .state11 button, .state12 button { font: 10vmin emoji, calibri; line-height: 12vmin; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
 .state4 button, .state9 button { font: 5vmin emoji, calibri; height: 10vmin; vertical-align: middle; margin: 0 0 3vmin;}
 br { font-size: 1px }
 #encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 2vmin; width: 92vmin; font-family: calibri; }
@@ -73,7 +73,7 @@ data = {
     ["🍖", "Carnophobia", "fear of meat"],
     ["⌛", "Chronophobia", "fear of time and time moving forward"],
     ["🛗", "Claustrophobia", "fear of having no escape and being closed in"],
-    ["🥶", "Cryophobia", "fear of extreme cold, ice, or frost"],
+    ["🥶", "Cryophobia,Frigophobia,Cheimaphobia,Psychrophobia", "fear of cold"],
     ["💻", "Cyberphobia,Logizomechanophobia", "fear of computers"],
     ["😈", "Demonophobia,Daemonophobia", "fear of demons"],
     ["👩🏻‍⚕️🦷", "Dentophobia,Odontophobia", "fear of dentists"],
@@ -98,7 +98,6 @@ data = {
     ["🩻☢️", "Radiophobia", "fear of radioactivity or X-rays"],
     ["🤖", "Robophobia", "fear of robots"],
     ["🎬", "Theatrophobia", "fear of theaters"],
-    ["🥶", "Frigophobia,Cheimaphobia,Psychrophobia", "fear of cold"],
     ["☄️", "Cometophobia,Meteorophobia", "fear of comets and meteors"],
     ["😔", "Tristophobia,Maestophobia", "fear of sadness"],
     ["🎅", "Santaphobia", "fear of Santa"],
@@ -414,13 +413,14 @@ setInterval(()=>{
 // Click handler 
 onclick = (e) => {
   //console.log(e.target);
+  var delay = 0;
   
   var i;
   
   // Title
   if(state == 0){
     if(e.target.id == "h201"){
-      state = 10;
+      state = 1;
       render();
     }
     if(e.target.id == "h202"){
@@ -438,6 +438,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -448,7 +449,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 2;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 2
@@ -460,6 +461,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -470,7 +472,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 3;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 3
@@ -482,6 +484,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -492,7 +495,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 4;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 4
@@ -504,6 +507,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -514,7 +518,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 5;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 5
@@ -526,6 +530,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -536,7 +541,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 6;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 6
@@ -548,6 +553,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -558,7 +564,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 7;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 7
@@ -570,6 +576,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -580,7 +587,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 8;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 8
@@ -592,6 +599,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -602,7 +610,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 9;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 9
@@ -614,6 +622,7 @@ onclick = (e) => {
     }
     else {
       e.target.className = "red";
+      delay = 1000;
       for(i of document.querySelectorAll("button")){
         if(i.innerHTML == answer){
           setTimeout(i.id + ".className = 'green'", 500);
@@ -624,7 +633,7 @@ onclick = (e) => {
     setTimeout(()=>{
       state = 10;
       render();
-    },2000);
+    },1000+delay);
   }
   
   // Level 10
@@ -635,17 +644,87 @@ onclick = (e) => {
     }
     else {
       ok.className = "red";
-      setTimeout(()=>{ee.innerHTML += "<br>(answer: "+answer+")<br><br><br><br><br>"}, 500);
+      delay = 1000;
+      setTimeout(()=>{ee.innerHTML += "<br><sub>(answer: "+answer+")</sub><br><br><br><br><br>"}, 500);
     }
     answered = 10;
     setTimeout(()=>{
       state = 11;
       render();
-    },2000);
+    },1000+delay);
+  }
+  
+  // Level 11
+  else if(state == 11 && answered != 11 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+      delay = 1000;
+      for(i of document.querySelectorAll("button")){
+        if(i.innerHTML == answer){
+          setTimeout(i.id + ".className = 'green'", 500);
+        }
+      }
+    }
+    answered = 11;
+    setTimeout(()=>{
+      state = 12;
+      render();
+    },1000+delay);
+  }
+  
+  // Level 12
+  else if(state == 12 && answered != 12 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+      delay = 1000;
+      for(i of document.querySelectorAll("button")){
+        if(i.innerHTML == answer){
+          setTimeout(i.id + ".className = 'green'", 500);
+        }
+      }
+    }
+    answered = 12;
+    setTimeout(()=>{
+      state = 13;
+      render();
+    },1000+delay);
+  }
+  
+  // 13
+  else if(state == 13 && answered != 13 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerText, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+      delay = 1000;
+      for(i of document.querySelectorAll("button")){
+        if(i.innerHTML == answer){
+          setTimeout(i.id + ".className = 'green'", 500);
+        }
+      }
+    }
+    answered = 13;
+    setTimeout(()=>{
+      state = 14;
+      render();
+    },1000+delay);
   }
   
   // Encyclo
-  else if(state == 99){
+  else if(state == 14 || state == 99){
     if(e.target.id == "h299"){
       location = location;
     }
@@ -989,6 +1068,108 @@ render = () => {
     questions.splice(questionindex, 1);
 
     ee.innerHTML = name;
+  }
+  
+  else if(state == 11){
+    b.innerHTML = "<h2>Question 11 / 13:<br>Flag that xenophobia</h2><div class=bigtext id=e>.</div><br><button id=b1>.</button><button id=b2>.</button><button id=b3>.</button>";
+    questions = data.country;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    name = question[1].split(",")[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = name;
+
+    emojis = [question[0], question2[0], question3[0]]
+    //console.log(emojis);
+    answer = emojis[0];
+    emojis.sort((a,b)=>0.5 - Math.random());
+    //console.log(emojis);
+    //console.log(answer);
+    
+    b1.innerHTML = emojis[0];
+    b2.innerHTML = emojis[1];
+    b3.innerHTML = emojis[2];
+  }
+  
+  else if(state == 12){
+    b.innerHTML = "<h2>Question 12 / 13:<br>Find what scares me (hard)</h2><div class=bigtext id=e>.</div><br><button id=b1>.</button><button id=b2>.</button><button id=b3>.</button>";
+    questions = data.hard;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    name = question[1].split(",")[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = name;
+
+    emojis = [question[0], question2[0], question3[0]]
+    //console.log(emojis);
+    answer = emojis[0];
+    emojis.sort((a,b)=>0.5 - Math.random());
+    //console.log(emojis);
+    //console.log(answer);
+    
+    b1.innerHTML = emojis[0];
+    b2.innerHTML = emojis[1];
+    b3.innerHTML = emojis[2];
+  }
+  
+  // Question 13:
+  else if(state == 13){
+    b.innerHTML = "<h2>Question 13 / 13:<br>Name that phobia (hard)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.hard;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    emoji = question[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = emoji;
+
+    names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+  }
+  
+  // Score
+  else if(state == 14){
+     b.innerHTML = "<h2>Score:</h2><br><div class=bigtext id=e>"+points+" / 13</div><h2 id=h299>MAIN MENU</h2>";
   }
   
   // Encyclo
