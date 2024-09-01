@@ -47,6 +47,77 @@ button div { pointer-events: none }
 </div>
 </body>
 <script>
+// Music
+track = [..."79:<>:> =9= <8< 79:<>:>CA>:>A  79:<>:> =9= <8< 79:<>:>CA>:>A  >@BCEBE FBF EBE >@BCEBE FBF E  >@BCEBE FBF EBE >@BCEBE FBF E  CEFHJFJ IEI HDH CEFHJFJOMJFJM OQRTVRV[ZVZ][  >>BEE QQ NN >>BEC QQ OO ==@GG SS OO ==@GG SS NN >>BEJ VV QQ >>BEJ VV SS LLOSS PQ Z VNNLS QJ VUUSS SRRSS LLN L LLS Q VUUSS SUXVV PSS QP NN LE VUUSS SRRSS LLN L LLS Q VUUSS SUXVV PSS Q P NJN LE  "].map(a=>a.codePointAt());
+
+note = 0;
+
+A = new (self.AudioContext||self.webkitAudioContext),
+m = A.createBuffer(1,1e6,44100);
+
+// Play a piano note
+piano = e => {
+  var V,v,p,c,b,w,r,D,i,s,u,D;
+  
+  for(
+  
+    // V: note length in seconds
+    V = 1.8,
+    
+    // Temp vars for guitar synthesis
+    v = [],
+    p = c = 0,
+    
+    // Modulation
+    // This function generates the i'th sample of a sinusoidal signal with a specific frequency and amplitude
+    b = (e,t,a,i) => Math.sin(e / t * 6.28 * a + i),
+    
+    // Instrument synthesis
+    w = (e,t) => Math.sin(e / 44100 * t * 6.28 + b(e,44100,t,0) ** 2 + .75 * b(e,44100,t,.25) + .1 * b(e,44100,t,.5)),
+    
+    // Sound samples
+    D = [],
+    
+    // Loop on all the samples
+    i = 0;
+    i < 44100 * V;
+    i++
+  ){
+  
+    // Fill the samples array
+    D[i] =
+    
+      // The first 88 samples represent the note's attack
+      i < 88 
+      ? i / 88.2 * w(i,e) / 19
+      
+      // The other samples represent the rest of the note
+      : (1 - (i - 88.2) / (44100 * (V - .002))) ** ((.5 * Math.log(1e4 * e / 44100)) ** 2) * w(i,e) / 19;
+  }
+  
+  // Play the note
+  
+  m.getChannelData(0).set(D),
+  s = A.createBufferSource(),
+  s.buffer = m,
+  s.connect(A.destination),
+  s.start()
+}
+
+play_note = n => {
+  if(n > 32) piano(440*1.06**(n - 80));
+}
+
+play_next_note = () => {
+  if(track[note]){
+    play_note(track[note]);
+    time = new Date();
+  }
+  //console.log(note, songs[song][note]);
+  note++;
+  note %= (track.length + 1);
+}
+
 
 // Data
 // categories: Easy / medium / hard / colors / animals / numbers / countries
@@ -422,6 +493,7 @@ onclick = (e) => {
     if(e.target.id == "h201"){
       state = 1;
       render();
+      I = setInterval(play_next_note,350);
     }
     if(e.target.id == "h202"){
       state = 99;
