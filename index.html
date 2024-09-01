@@ -12,21 +12,28 @@ body { margin: 0; overflow: hidden; }
 .state0 h2#h201 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 62vmin; }
 .state0 h2#h202 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 70vmin; }
 .state0 h1 span { font-size: 10vmin;display: inline-block; width: 12.5vmin; height: 14.5vmin; overflow: visible; text-align:center; vertical-align: bottom; text-shadow: 0 0 1vmin #000; }
-.state99 h2 { position: absolute; top: 80vmin; font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; }
+.state99 h2 { position: absolute; top: 85vmin; font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; }
 h2 { font: bold 5vmin/4.5vmin calibri; }
-.circle {width: 3vmin; height: 3vmin; display: inline-block; border-radius: 50% }
+.circle {width: 3.5vmin; height: 3.5vmin; display: inline-block; border-radius: 50% }
 .pink { background: pink }
 .gray { background: gray }
-.bigemoji { font-size: 30vmin; text-shadow: 0 0 1vmin #000;}
+.bigemoji { font-size: 30vmin; line-height: 40vmin; text-shadow: 0 0 1vmin #000;}
 .bigtext { font-size: 10vmin; line-height: 55vmin; }
 button { background: #fff; font: 4vmin calibri; border: 1px solid #888; border-bottom-width: 2px; 
 border-right-width: 2px; border-radius: 1vmin; margin: .5vmin; padding: 1vmin 2vmin; }
-.state2 button { font: 10vmin emoji, calibri; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
+.state2 button,.state6 button { font: 10vmin emoji, calibri; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
+.state4 button, .state9 button { font: 5vmin emoji, calibri; height: 10vmin; vertical-align: middle; margin: 0 0 3vmin;}
 br { font-size: 1px }
-#encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 20vmin 2vmin; width: 92vmin; font-family: calibri; }
+#encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 2vmin; width: 92vmin; font-family: calibri; }
 #encyclo span { font-size: 4vmin; text-shadow: 0 0 .2vmin #000; font-family: emoji, calibri; padding: 0 0 0 2vmin}
-.green { background: #5F5 }
-.red { background: #F55 }
+.green { background: #5F5!important }
+.red { background: #F55!important }
+.state5 .bigemoji { font-size: 20vmin; line-height: 40vmin; }
+.state99 h1 { font-size: 8vmin; }
+.state99 h2 { font-size: 4vmin; }
+.state7 button { background: transparent; border: none; font-size: 10vmin; padding: 1vmin 0; }
+.state7 .bigtext { line-height: 30vmin; }
+.state7 button .circle { width: 10vmin; height: 10vmin; position: relative; top: 1.5vmin;}
 </style>
 </head>
 <body>
@@ -92,6 +99,13 @@ data = {
     ["🎬", "Theatrophobia", "fear of theaters"],
     ["🥶", "Frigophobia,Cheimaphobia,Psychrophobia", "fear of cold"],
     ["☄️", "Cometophobia", "fear of comets"],
+    ["😔", "Tristophobia,Maestophobia", "fear of sadness"],
+    ["🎅", "Santaphobia", "fear of Santa"],
+    ["👬", "Homophobia", "fear of homosexuals"],
+    ["🌵️", "Kactosophobia", "fear of cacti"],
+    ["🍏🍒", "Fructophobia", "fear of fruits"],
+    ["🍫", "Xocolataphobia", "fear of chocolates"],
+    ["🥛", "Crystallophobia,Nelophobia,Hyalophobia", "fear of glass"],
   ],
 
   medium: [
@@ -113,14 +127,12 @@ data = {
     ["😳", "Ereuthrophobia", "fear of blushing"],
     ["🎈", "Globophobia", "fear of balloons"],
     ["😇♱", "Hagiophobia,Staurophobia", "fear of saints, crosses or holy things"],
-    ["🐊", "Herpetophobia", "fear of reptiles or amphibians"],
     ["😶‍🌫️", "Nebulaphobia,Homichlophobia", "fear of fog"],
     ["🧟", "Kinemortophobia", "fear of zombies"],
     ["⬅️", "Sinistrophobia,Levophobia", "fear of things to the left"],
     ["🦦", "Lutraphobia", "fear of otters"],
     ["🎭", "Masklophobia", "fear of people in masks, costumes, and mascots"],
     ["♫", "Melophobia", "fear of music"],
-    ["🥛", "Crystallophobia,Nelophobia,Hyalophobia", "fear of glass"],
     ["📴", "Nomophobia", "fear of being out of mobile phone"],
     ["🏥", "Nosocomephobia", "fear of hospitals"],
     ["🍻", "Methyphobia,Potophobia", "fear of alcohol"],
@@ -140,9 +152,14 @@ data = {
     ["🤕", "Traumatophobia", "fear of having an injury"],
     ["👕👖", "Vestiphobia", "fear of clothing"],
     ["🪵", "Xylophobia", "fear of wooden objects or forests"],
+    ["🧳", "Valitsaphobia ", "fear of suitcases"],
+    ["🪨", "Petraphobia,Petrophobia", "fear of rocks"],
+    ["🗺", "Cartophobia,Mappophobia", "fear of maps"],
+    
   ],
 
   hard: [
+    ["🪐", "Tuxiphobia", "fear of Saturn"],
     ["🌃", "Achluophobia", "fear of darkness"],
     ["🤪", "Agateophobia", "fear of insanity"],
     ["🤕", "Agliophobia,Algophobia", "fear of pain"],
@@ -223,6 +240,11 @@ data = {
     ["💉", "Trypanophobia", "fear of needles or injections"],
     ["🎢", "Veloxrotaphobia", "fear of roller coasters"],
     ["🪒", "Xyrophobia", "fear of razors"],
+    ["🧔🥸", "Pogonophobia", "fear of beards and mustaches"],
+    ["🤐", "Sedatephobia", "fear of silence"],
+    ["💅", "Onuxophobia", "fear of nails"],
+    ["👂", "Aftiphobia", "fear of ears"],
+    ["♾️", "Apeirophobia", "fear of infinity"],
   ],
 
   color: [
@@ -241,36 +263,55 @@ data = {
 
   ],
 
-  animal: [
-    ["🐈", "Gatophobian,Ailurophobia,Galeophobia","fear of cats"],
+  animaleasy: [
+    ["🐈", "Gatophobia,Ailurophobia,Galeophobia","fear of cats"],
     ["🕷️", "Arachnophobia","fear of spiders"],
     ["🐸", "Batrachophobia,Ranidaphobia","fear of frogs"],
-    ["🦇", "Chiroptophobia","fear of bats"],
     ["🐶", "Cynophobia","fear of dogs"],
     ["🕷️", "Insectophobia,Entomophobia","fear of insects"],
     ["🐎", "Equinophobia,Hippophobia","fear of horses"],
-    ["🐟", "Ichthyophobia","fear of fish"],
-    ["🪳", "Katsaridaphobia","fear of cockroaches"],
-    ["🦋", "Lepidopterophobia","fear of butterflies and moths"],
     ["🐝", "Apiphobia,Melissophobia", "fear of bees"],
     ["🐌", "Molluscophobia","fear of snails and slugs"],
     ["🐁", "Suriphobia,Musophobia","fear of mice or rats"],
-    ["🐍", "Ophidiophobia","fear of snakes"],
     ["🐦", "Ornithophobia","fear of birds"],
-    ["🐚", "Ostraconophobia","fear of shellfish"],
     ["🐘", "Pachydermophobia","	fear of elephants"],
-    ["🦎", "Scoliodentosaurophobia	","fear of lizards, geckos"],
-    ["🐛", "Scoleciphobia,Helminthophobia","fear of worms"],
     ["🪱", "Taeniophobia,Teniophobia","fear of tapeworms"],
-    ["🐻", "Arkoudaphobia","fear of bears"],
     ["🪰", "Pteronarcophobia","fear of flies"],
     ["🐺", "Lupophobia","fear of wolves"],
+    ["🦊", "Fennecaphobia","fear of foxes"],
+    ["🐷", "Porcophobia,Swinophobia","fear of pigs"],
+    ["🦖", "Deinophobia,Ornithoscelidaphobia,Paleontophobia","fear of dinosaurs"],
+    ["🦓", "Zebraphobia,Zevraphobia","fear of zebras"],
+    ["🐊", "Krokodeilophobia","fear of crocodiles"],
+    ["🐉", "Dracophobia","fear of dragons"],
+    ["🦒", "Giraphobia","fear of giraffes"],
+    ["🦘", "Kagkourophobia","fear of kangaroos"],
+    ["🐿", "Sciurophobia","fear of squirrels"],
+    ["🐄", "Bovinophobia","fear of cows"],
+    ["🦙", "Llamaphobia","fear of llamas"],
+  ],
+  
+  animalhard: [
+    ["🐢", "Chelonaphobia ","fear of turtles"],
+    ["🐇", "Leporiphobia","fear of rabbits"],
+    ["🦄", "Monokerophobia","fear of unicorns"],
+    ["🐒", "Pithecophobia","fear of monkeys"],
+    ["🐔", "Alektorophobia","fear of chickens"],
     ["🦆", "Anatidaephobia","fear of ducks"],
+    ["🦎", "Scoliodentosaurophobia	","fear of lizards, geckos"],
+    ["🐻", "Arkoudaphobia","fear of bears"],
+    ["🐛", "Scoleciphobia,Helminthophobia","fear of worms"],
+    ["🐚", "Ostraconophobia","fear of shellfish"],
+    ["🐍", "Ophidiophobia","fear of snakes"],
+    ["🦋", "Lepidopterophobia","fear of butterflies and moths"],
+    ["🪳", "Katsaridaphobia","fear of cockroaches"],
+    ["🦇", "Chiroptophobia","fear of bats"],
+    ["🐟", "Ichthyophobia","fear of fish"],
+    ["🐊", "Herpetophobia", "fear of reptiles or amphibians"],
+  
   ],
 
-  number: [
-    ["0️⃣", "Oudenophobia", "fear of 0"],
-    ["1️⃣", "Henophobia", "fear of 1"],
+  numbereasy: [
     ["2️⃣", "Dyophobia", "fear of 2"],
     ["3️⃣", "Triskaphobia", "fear of 3"],
     ["4️⃣", "Tetraphobia", "fear of 4"],
@@ -278,7 +319,6 @@ data = {
     ["6️⃣", "Hexaphobia", "fear of 6"],
     ["7️⃣", "Heptaphobia", "fear of 7"],
     ["8️⃣", "Octophobia", "fear of 8"],
-    ["9️⃣", "Enneaphobia", "fear of 9"],
     ["1️⃣0️⃣", "Decaphobia", "fear of 10"],
     ["1️⃣1️⃣", "Hendecaphobia", "fear of 11"],
     ["1️⃣2️⃣", "Dodecaphobia", "fear of 12"],
@@ -288,14 +328,19 @@ data = {
     ["1️⃣6️⃣", "Hexadecaphobia", "fear of 16"],
     ["1️⃣7️⃣", "Heptadecaphobia", "fear of 17"],
     ["1️⃣8️⃣", "Octodecaphobia", "fear of 18"],
-    ["1️⃣9️⃣", "Enneadecaphobia", "fear of 19"],
-    ["2️⃣0️⃣", "Eikosiphobia", "fear of 20"],
     ["3️⃣0️⃣", "Trigintiphobia", "fear of 30"],
+  ],
+  
+  numberhard: [
+    ["0️⃣", "Oudenophobia", "fear of 0"],
+    ["2️⃣0️⃣", "Eikosiphobia", "fear of 20"],
+    ["1️⃣9️⃣", "Enneadecaphobia", "fear of 19"],
+    ["9️⃣", "Enneaphobia", "fear of 9"],
+    ["1️⃣", "Henophobia", "fear of 1"],
     ["6️⃣9️⃣", "Hexekontenneaphobia", "fear of 69"],
     ["9️⃣9️⃣", "Enenekontenneaphobia", "fear of 99"],
     ["1️⃣0️⃣0️⃣", "Hekatophobia", "fear of 100"],
     ["6️⃣6️⃣6️⃣", "Hexakosioihexekontahexaphobia", "fear of 666"],
-    ["♾️", "Apeirophobia", "fear of infinity"],
   ],
 
   country: [
@@ -317,6 +362,23 @@ data = {
     ["🇨🇳", "Sinophobia", "fear of Chinese people"],
     ["🇹🇷", "Turcophobia", "fear of Turks"],
     ["🇺🇦", "Ukrainophobia", "fear of Ukrainians"],
+  ],
+  
+  wrong: [
+    
+    ["😤", "Nasumexhalophobia"],
+    ["👏", "Precophobia"],
+    ["🫵", "Ostendophobia"],
+    ["🤞", "Cruxodigitophobia"],
+    ["🧠", "Cerebrophobia"],
+    ["👣", "Vestigophobia"],
+    ["🧑‍🌾", "Agricophobia"],
+    ["🧞", "Geniephobia"],
+    ["🪢", "Nodumphobia"],
+    ["🧤", "Gloviphobia"],
+    ["☘️", "Cytisophobia"],
+    ["🎍", "Fermentophobia"],
+    ["🛰", "Satellophobia"],
   ],
 
 };
@@ -358,7 +420,7 @@ onclick = (e) => {
   // Title
   if(state == 0){
     if(e.target.id == "h201"){
-      state = 1;
+      state = 9;
       render();
     }
     if(e.target.id == "h202"){
@@ -418,12 +480,102 @@ onclick = (e) => {
     },1000);
   }
   
+  // Level 4
+  else if(state == 4 && answered != 4 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerHTML, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 4;
+    setTimeout(()=>{
+      state = 5;
+      render();
+    },1000);
+  }
+  
+  // Level 5
+  else if(state == 5 && answered != 5 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerHTML, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 5;
+    setTimeout(()=>{
+      state = 6;
+      render();
+    },1000);
+  }
+  
+  // Level 6
+  else if(state == 6 && answered != 6 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerHTML, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 6;
+    setTimeout(()=>{
+      state = 7;
+      render();
+    },1000);
+  }
+  
+  // Level 7
+  else if(state == 7 && answered != 7 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerHTML, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 7;
+    setTimeout(()=>{
+      state = 8;
+      render();
+    },1000);
+  }
+  
+  // Level 8
+  else if(state == 8 && answered != 8 && e.target.tagName == "BUTTON"){
+    //console.log(answer, e.target.innerHTML, answered);
+    if(e.target.innerHTML == answer){
+      e.target.className = "green";
+      points++;
+    }
+    else {
+      e.target.className = "red";
+    }
+    answered = 8;
+    setTimeout(()=>{
+      state = 9;
+      render();
+    },1000);
+  }
+  
+  
+  
+  
+  
   // Encyclo
   else if(state == 99){
     if(e.target.id == "h299"){
       location = location;
     }
   }
+  
 }
 
 // Render
@@ -435,6 +587,7 @@ render = () => {
   var i, j, k;
   var phobias;
   var html;
+  var right1, right2, right3, right4, wrong1, wrong2, wrong3, wrong4;
   
   b.innerHTML = "";
   
@@ -512,8 +665,8 @@ render = () => {
   
   // Question 3:
   else if(state == 3){
-    b.innerHTML = "<h2>Question 3 / 13:<br>What zoophobiac am I?</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
-    questions = data.animal;
+    b.innerHTML = "<h2>Question 3 / 13:<br>What zoophobiac am I? (easy)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.animaleasy;
     //console.log(questions);
     questionindex = (questions.length * Math.random()) | 0;
     question = questions[questionindex];
@@ -543,14 +696,220 @@ render = () => {
     b3.innerHTML = names[2];
   }
   
+  // Question 4:
+  else if(state == 4){
+    b.innerHTML = "<h2>Question 4 / 13:<br>Which phobia actually exists?</h2><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button><br><button id=b4>.</button><br><button id=b5>.</button>";
+    questions = data.hard;
+    questionindex = (questions.length * Math.random()) | 0;
+    right1 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questions = data.wrong;
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong1 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong4 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    names = [
+      right1[0] + " - " + right1[1].split(",")[0],
+      wrong1[0] + " - " + wrong1[1].split(",")[0],
+      wrong2[0] + " - " + wrong2[1].split(",")[0],
+      wrong3[0] + " - " + wrong3[1].split(",")[0],
+      wrong4[0] + " - " + wrong4[1].split(",")[0],
+    ]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+    b4.innerHTML = names[3];
+    b5.innerHTML = names[4];
+  }
   
+  // Question 5
+  else if(state == 5){
+    b.innerHTML = "<h2>Question 5 / 13:<br>Numerophobia! (easy)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.numbereasy;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    emoji = question[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = emoji;
+
+    names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+  }
+  
+  else if(state == 6){
+    b.innerHTML = "<h2>Question 6 / 13:<br>Find what scares me (medium)</h2><div class=bigtext id=e>.</div><br><button id=b1>.</button><button id=b2>.</button><button id=b3>.</button>";
+    questions = data.medium;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    name = question[1].split(",")[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = name;
+
+    emojis = [question[0], question2[0], question3[0]]
+    //console.log(emojis);
+    answer = emojis[0];
+    emojis.sort((a,b)=>0.5 - Math.random());
+    //console.log(emojis);
+    //console.log(answer);
+    
+    b1.innerHTML = emojis[0];
+    b2.innerHTML = emojis[1];
+    b3.innerHTML = emojis[2];
+  }
+  
+  else if(state == 7){
+    html = "<h2>Question 7 / 13:<br>Pick a color (if you dare)</h2><div class=bigtext id=e>.</div><br>";
+    questions = data.color;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    name = question[1].split(",")[0];
+
+    for(i in questions){
+      if(i==6) html += "<br>";
+      html += "<button>" + questions[i][0]+ "</button>"
+    }
+
+    b.innerHTML = html;
+    e.innerHTML = name;
+    answer = question[0];
+  }
+  
+  // Question 8:
+  if(state == 8){
+    b.innerHTML = "<h2>Question 8 / 13:<br>Name that phobia (medium)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    questions = data.medium;
+    //console.log(questions);
+    questionindex = (questions.length * Math.random()) | 0;
+    question = questions[questionindex];
+    emoji = question[0];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questionindex = (questions.length * Math.random()) | 0;
+    question3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    //console.log(questions);
+
+    e.innerHTML = emoji;
+
+    names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+  }
+  
+  // Question 9:
+  else if(state == 9){
+    b.innerHTML = "<h2>Question 9 / 13:<br>Which phobia does NOT exist?</h2><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button><br><button id=b4>.</button><br><button id=b5>.</button>";
+    questions = data.wrong;
+    questionindex = (questions.length * Math.random()) | 0;
+    right1 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    questions = data.hard;
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong1 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong2 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong3 = questions[questionindex];
+    questions.splice(questionindex, 1);
+    
+    questionindex = (questions.length * Math.random()) | 0;
+    wrong4 = questions[questionindex];
+    questions.splice(questionindex, 1);
+
+    names = [
+      right1[0] + " - " + right1[1].split(",")[0],
+      wrong1[0] + " - " + wrong1[1].split(",")[0],
+      wrong2[0] + " - " + wrong2[1].split(",")[0],
+      wrong3[0] + " - " + wrong3[1].split(",")[0],
+      wrong4[0] + " - " + wrong4[1].split(",")[0],
+    ]
+    //console.log(names);
+    answer = names[0];
+    names.sort((a,b)=>0.5 - Math.random());
+    //console.log(names);
+    //console.log(answer);
+    
+    b1.innerHTML = names[0];
+    b2.innerHTML = names[1];
+    b3.innerHTML = names[2];
+    b4.innerHTML = names[3];
+    b5.innerHTML = names[4];
+  }
   
   // Encyclo
   else if(state == 99){
     phobias = [];
     for(i in data){
-      for(j in data[i]){
-        phobias.push(data[i][j]);
+      if(i != "wrong"){
+        for(j in data[i]){
+          phobias.push(data[i][j]);
+        }
       }
     }
     //console.log(phobias);
@@ -559,7 +918,7 @@ render = () => {
     for(i in phobias){
       html += "<span>"+phobias[i][0]+"</span> - "+phobias[i][1].replaceAll(",",", ") + " - " + phobias[i][2]+ "<br>";
     }
-    b.innerHTML += "<div id=encyclo>"+html+"</div><h2 id=h299>MAIN MENU</h2>";
+    b.innerHTML += "<h1>ENCYCLOPHOBIA</h1><div id=encyclo>"+html+"</div><h2 id=h299>MAIN MENU</h2>";
   }
 }
 </script>
