@@ -7,25 +7,27 @@
 @keyframes wobble { 0%, 100% { transform: rotate(-5deg) } 50% { transform: rotate(5deg) } }
 body { margin: 0; overflow: hidden; }
 * { cursor: pointer }
-#b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri; overflow: hidden; box-shadow: 0 0 50vmin #ccc inset, 0 0 50vmin #888}
-.state0 h1 {animation: wobble 2s infinite; font: bold 15vmin emoji, calibri; text-align: center; width: 95vmin; position: absolute; top: 30vmin; letter-spacing: -.5vmin; }
-.state0 h2#h201 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 62vmin; }
-.state0 h2#h202 {font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; top: 70vmin; }
+#b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri,arial; overflow: hidden; box-shadow: 0 0 50vmin #ccc inset, 0 0 50vmin #888}
+.state0 h1 {animation: wobble 2s infinite; font: bold 15vmin emoji, calibri,arial; text-align: center; width: 95vmin; position: absolute; top: 30vmin; letter-spacing: -.5vmin; overflow: hidden; color: #000; }
+.mobile .state0 h1 { font: bold 10vmin emoji, calibri; }
+.state0 h2#h201 {font: bold 5vmin calibri,arial; text-align: center; width: 95vmin; position: absolute; top: 62vmin; }
+.state0 h2#h202 {font: bold 5vmin calibri,arial; text-align: center; width: 95vmin; position: absolute; top: 70vmin; }
 .state0 h1 span { font-size: 10vmin;display: inline-block; width: 12.5vmin; height: 14.5vmin; overflow: visible; text-align:center; vertical-align: bottom; text-shadow: 0 0 1vmin #000; }
-.state99 h2 { position: absolute; top: 85vmin; font: bold 5vmin calibri; text-align: center; width: 95vmin; position: absolute; }
-h2 { font: bold 5vmin/4.5vmin calibri; }
+.mobile .state0 h1 span { font-size: 7vmin; height: 11vmin; }
+.state99 h2 { position: absolute; top: 85vmin; font: bold 5vmin calibri,arial; text-align: center; width: 95vmin; position: absolute; }
+h2 { font: bold 5vmin/4.5vmin calibri,arial; }
 .circle {width: 3.5vmin; height: 3.5vmin; display: inline-block; border-radius: 50% }
 .pink { background: pink }
 .gray { background: gray }
 .bigemoji { font-size: 30vmin; line-height: 40vmin; text-shadow: 0 0 1vmin #000;}
 .bigtext { font-size: 10vmin; line-height: 55vmin; }
-button { background: #fff; font: 4vmin calibri; border: 1px solid #888; border-bottom-width: 2px; 
+button { background: #fff; font: 4vmin calibri,arial; border: 1px solid #888; border-bottom-width: 2px; 
 border-right-width: 2px; border-radius: 1vmin; margin: .5vmin; padding: 1vmin 2vmin; }
-.state2 button,.state6 button, .state11 button, .state12 button { font: 10vmin emoji, calibri; line-height: 12vmin; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
-.state4 button, .state9 button { font: 5vmin emoji, calibri; height: 10vmin; vertical-align: middle; margin: 0 0 3vmin;}
+.state2 button,.state6 button, .state11 button, .state12 button { font: 10vmin emoji, calibri,arial; line-height: 12vmin; height: 14vmin; vertical-align: middle; text-shadow: 0 0 .5vmin #000; }
+.state4 button, .state9 button { font: 5vmin emoji, calibri,arial; height: 10vmin; vertical-align: middle; margin: 0 0 3vmin;}
 br { font-size: 1px }
-#encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 2vmin; width: 92vmin; font-family: calibri; }
-#encyclo span { font-size: 4vmin; text-shadow: 0 0 .2vmin #000; font-family: emoji, calibri; padding: 0 0 0 2vmin}
+#encyclo { font-size: 2.5vmin; text-align: left; padding: 5vmin 0vmin; height: 45vmin; overflow: auto; margin: 2vmin; width: 92vmin; font-family: calibri,arial; }
+#encyclo span { font-size: 4vmin; text-shadow: 0 0 .2vmin #000; font-family: emoji, calibri,arial; padding: 0 0 0 2vmin}
 .green { background: #5F5!important }
 .red { background: #F55!important }
 .state5 .bigemoji { font-size: 20vmin; line-height: 40vmin; }
@@ -49,6 +51,11 @@ button div { pointer-events: none }
 </div>
 </body>
 <script>
+// Bobile
+if(window.orientation>-1){
+  document.body.className = "mobile";
+}
+    
 // Music
 
 track = [..."79:<>:> =9= <8< 79:<>:>CA>:>A  79:<>:> =9= <8< 79:<>:>CA>:>A  >@BCEBE FBF EBE >@BCEBE FBF E  >@BCEBE FBF EBE >@BCEBE FBF E  CEFHJFJ IEI HDH CEFHJFJOMJFJM  OQRTVRV[ZVZ][   >>BEE QQ NN >>BEC QQ OO ==@GG SS OO ==@GG SS NN >>BEJ VV QQ >>BEJ VV SS LLOSS  PQZ VNNLS QJ VUUSS SRRSS LLN L LLS Q VUUSS SUXVV PSS QP NN LE VUUSS SRRSS LLN L LLS Q VUUSS SUXVV PSS QP NJN LE   "].map(a=>a.codePointAt());
