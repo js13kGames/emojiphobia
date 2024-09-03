@@ -3,9 +3,10 @@
 <link rel=icon href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>😱</text></svg>">
 <head>
 <style>
+/* RC3 */
 @font-face{font-family: emoji; src: url(Twemoji.ttf)}
 @keyframes wobble { 0%, 100% { transform: rotate(-5deg) } 50% { transform: rotate(5deg) } }
-body { margin: 0; overflow: hidden; }
+body { margin: 0; overflow: hidden; background: #fff; }
 * { cursor: pointer }
 #b { background: #eee; width: 95vmin; height: 95vmin; margin: 2.5vmin auto; border-radius: 30%; text-align: center; font-family: calibri,arial; overflow: hidden; box-shadow: 0 0 50vmin #ccc inset, 0 0 50vmin #888}
 .state0 h1 {animation: wobble 2s infinite; font: bold 15vmin emoji, calibri,arial; text-align: center; width: 95vmin; position: absolute; top: 30vmin; letter-spacing: -.5vmin; overflow: hidden; color: #000; }
@@ -41,6 +42,7 @@ button div { pointer-events: none }
 .state10 input { height: 7vmin; vertical-align: bottom; font-size: 6vmin; width: 15vmin; }
 .state14 h2 { animation: wobble infinite 2s }
 .state15 .bigtext { font-size: 10vmin; line-height: 8vmin; padding: 20vmin 0; }
+.state14 .circle { width: 10vmin; height: 10vmin; }
 * {
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -191,7 +193,7 @@ nudge = (f,t,A,m,b,s) => {
 // for each phobia => emoji / name / description 
 data = {
   easy: [
-    ["📢", "Acousticophobia", "fear of noise"],
+    ["📢", "Acousticophobia,Ligyrophobia", "fear of noise"],
     ["🧗🏻", "Acrophobia", "fear of heights"],
     ["✈️", "Aerophobia,Aviophobia,Aviatophobia", "fear of aircraft"],
     ["👽", "Alienophobia", "fear of aliens"],
@@ -253,7 +255,7 @@ data = {
     ["👨", "Androphobia,Arrhenphobia", "fear of adult men"],
     ["🔥", "Arsonphobia", "fear of fire"],
     ["☢️💣", "Atomosophobia", "fear of atomic explosions"],
-    ["🌩️", "Astraphobia,Brontophobia", "fear of thunder and lightning"],
+    ["🌩️", "Astraphobia,Brontophobia,Tonitrophobia", "fear of thunder and lightning"],
     ["👩", "Venustraphobia,Caligynephobia", "fear of beautiful women"],
     ["👉🧍", "Chiraptophobia,Haphephobia,Aphenphosmphobia", "fear of being touched"],
     ["🕓", "Chronomentrophobia", "fear of clocks"],
@@ -285,7 +287,6 @@ data = {
     ["🐂", "Taurophobia", "fear of bulls"],
     ["☎️", "Telephobia", "fear of making or taking telephone calls"],
     ["☠️", "Thanatophobia", "fear of dying"],
-    ["🌩️", "Tonitrophobia", "fear of thunder"],
     ["🤕", "Traumatophobia", "fear of having an injury"],
     ["👕👖", "Vestiphobia", "fear of clothing"],
     ["🪵", "Xylophobia", "fear of wooden objects or forests"],
@@ -352,7 +353,6 @@ data = {
     ["🥱", "Kopophobia", "fear of fatigue"],
     ["🥕🥦", "Lachanophobia", "fear of vegetables"],
     ["🗣️", "Laliophobia,Lalophobia", "fear of speaking"],
-    ["📢", "Ligyrophobia", "fear of loud noises"],
     ["🌪️", "Lilapsophobia", "fear of tornadoes or hurricanes"],
     ["🏞️", "Limnophobia", "fear of lakes"],
     ["🧵", "Linonophobia", "fear of string"],
@@ -925,6 +925,9 @@ onclick = (e) => {
         }
       }
     }
+    // no more questions
+    if(suddendeathquestions.length < 3){ state=15 }
+    
     setTimeout(()=>{
       render();
     },1000+delay);
@@ -1001,11 +1004,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = name;
@@ -1034,11 +1037,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = emoji;
@@ -1102,7 +1105,7 @@ render = () => {
   
   // Question 5
   else if(state == 5){
-    b.innerHTML = "<h2>Question 5 / 13:<br>Numerophobia! (easy)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
+    b.innerHTML = "<h2>Question 5 / 13:<br>Arithmophobia! (easy)</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
     questions = data.numbereasy;
     //console.log(questions);
     questionindex = (questions.length * Math.random()) | 0;
@@ -1112,11 +1115,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = emoji;
@@ -1198,11 +1201,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = emoji;
@@ -1290,11 +1293,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = name;
@@ -1356,11 +1359,11 @@ render = () => {
 
     questionindex = (questions.length * Math.random()) | 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
 
     questionindex = (questions.length * Math.random()) | 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1);
     //console.log(questions);
 
     e.innerHTML = emoji;
@@ -1380,23 +1383,26 @@ render = () => {
   // Sudden death
   else if(state == 14){
     b.innerHTML = "<h2>SUDDEN DEATH<br>"+(bonus)+" bonus points</h2><div class=bigemoji id=e>.</div><br><button id=b1>.</button><br><button id=b2>.</button><br><button id=b3>.</button>";
-    questions = data.easy;
-    //console.log(questions);
-    questionindex = (questions.length * Math.random()) | 0;
+    questions = suddendeathquestions;
+    console.log(questions);
+    questionindex = 0;
     question = questions[questionindex];
     emoji = question[0];
-    questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1).replace("- ", "");
 
-    questionindex = (questions.length * Math.random()) | 0;
+    questionindex = 0;
     question2 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1).replace("- ", "");
 
-    questionindex = (questions.length * Math.random()) | 0;
+    questionindex = 0;
     question3 = questions[questionindex];
-    //questions.splice(questionindex, 1);
+    questions.splice(questionindex, 1).replace("- ", "");
     //console.log(questions);
 
     e.innerHTML = emoji;
+    if(emoji.length > 5){
+      e.style.fontSize = "20vmin";
+    }
 
     names = [question[1].split(",")[0], question2[1].split(",")[0], question3[1].split(",")[0]]
     //console.log(names);
